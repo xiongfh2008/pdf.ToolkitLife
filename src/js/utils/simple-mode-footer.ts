@@ -11,11 +11,11 @@ if (__SIMPLE_MODE__) {
         simpleFooter.innerHTML = `
       <div class="container mx-auto px-4">
         <div class="flex items-center mb-4">
-          <img src="../../images/favicon.svg" alt="Bento PDF Logo" class="h-8 w-8 mr-2">
-          <span class="text-white font-bold text-lg">BentoPDF</span>
+          <img src="../../images/pdftoolkit-logo.svg" alt="PDFToolkit Logo" class="h-8 w-8 mr-2">
+          <span class="text-white font-bold text-lg">PDFToolkit</span>
         </div>
         <p class="text-gray-400 text-sm">
-          &copy; 2025 BentoPDF. All rights reserved.
+          &copy; 2025 PDFToolkit. All rights reserved.
         </p>
         <p class="text-gray-500 text-xs mt-2">
           Version <span id="app-version-simple">${APP_VERSION}</span>

@@ -1,44 +1,34 @@
-<p align="center"><img src="public/images/favicon.svg" width="80"></p>
-<h1 align="center">BentoPDF</h1>
+<p align="center"><img src="public/images/pdftoolkit-logo.svg" width="80"></p>
+<h1 align="center">PDFToolkit</h1>
 
-**BentoPDF** is a powerful, privacy-first, client-side PDF toolkit that is self hostable and allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing is required, ensuring your files remain secure and private.
+**PDFToolkit** is a powerful, privacy-first, client-side PDF toolkit that is self-hostable and allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing is required, ensuring your files remain secure and private.
 
-![Docker Pulls](https://img.shields.io/docker/pulls/bentopdf/bentopdf) [![Ko-fi](https://img.shields.io/badge/Buy%20me%20a%20Coffee-yellow?logo=kofi&style=flat-square)](https://ko-fi.com/alio0) ![GitHub Stars](https://img.shields.io/github/stars/alam00000/bentopdf?style=social)
-[![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ff69b4)](https://github.com/sponsors/alam00000)
+![PDFToolkit Tools](public/images/pdftoolkit-screenshot.png)
 
-![BentoPDF Tools](public/images/bentopdf-tools.png)
+## 🌐 Multi-Language Support
 
----
-
-## 📜 Licensing
-
-BentoPDF is dual-licensed:
-
-- **AGPL-3.0** for open-source projects where you share your full source code publicly
-- **Commercial License** for proprietary/closed-source applications - **[Get Lifetime License for $49](https://ko-fi.com/s/f32ca4cb75)** (a one-time lifetime purchase, includes all feature updates forever)
-
-For more details, see our [Licensing Page](https://bentopdf.com/licensing.html)
-
-<hr>
-
-## ⭐ Stargazers over time
-
-[![Star History Chart](https://api.star-history.com/svg?repos=alam00000/bentopdf&type=Date)](https://star-history.com/#alam00000/bentopdf&Date)
+PDFToolkit supports 30+ languages including:
+- English, 简体中文, 繁體中文, 日本語, 한국어
+- Deutsch, Français, Italiano, Español, Português
+- हिन्दी, العربية, বাংলা, ภาษาไทย, עברית
+- And many more...
 
 ---
 
-## ✨ Why BentoPDF?
+---
+
+## ✨ Why PDFToolkit?
 
 - **Privacy First**: All processing happens in your browser. Your files are never uploaded to a server, guaranteeing 100% privacy.
 - **No Limits**: Manipulate as many files as you want, as often you want. There are no restrictions or upload limits.
-- **High Performance**: Built with modern web technologies, BentoPDF is fast and efficient, handling even large PDF files with ease.
-- **Completely Free**: BentoPDF is a free and open-source tool for everyone.
+- **High Performance**: Built with modern web technologies, PDFToolkit is fast and efficient, handling even large PDF files with ease.
+- **Completely Free**: PDFToolkit is a free and open-source tool for everyone.
 
 ---
 
 ## 🛠️ Features / Tools Supported
 
-BentoPDF offers a comprehensive suite of tools to handle all your PDF needs.
+PDFToolkit offers a comprehensive suite of tools to handle all your PDF needs.
 
 ### Organize & Manage PDFs
 
@@ -141,7 +131,7 @@ BentoPDF offers a comprehensive suite of tools to handle all your PDF needs.
 
 ## 🚀 Getting Started
 
-You can run BentoPDF locally for development or personal use.
+You can run PDFToolkit locally for development or personal use.
 
 ### Prerequisites
 
@@ -151,41 +141,28 @@ You can run BentoPDF locally for development or personal use.
 
 ### 🚀 Quick Start with Docker
 
-[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/K4AU2B)
-
-You can run BentoPDF directly from Docker Hub or GitHub Container Registry without cloning the repository:
-
-You can also watch the video on how to set it up 👉
-[BentoPDF Docker Setup](https://drive.google.com/file/d/1C4eJ2nqeaH__1Tlad-xuBHaF2Ha4fSBf/view?usp=drive_link)
-
-**Using Docker Hub:**
+You can run PDFToolkit using Docker:
 
 ```bash
-docker run -p 3000:8080 bentopdf/bentopdf:latest
-```
-
-**Using GitHub Container Registry:**
-
-```bash
-docker run -p 3000:8080 ghcr.io/alam00000/bentopdf:latest
+docker build -t pdftoolkit .
+docker run -p 3000:8080 pdftoolkit:latest
 ```
 
 Open your browser at: http://localhost:3000
 
-This is the fastest way to try BentoPDF without setting up a development environment.
+This is the fastest way to try PDFToolkit without setting up a development environment.
 
 ### 🏠 Self-Hosting
 
-Since BentoPDF is fully client-side, all processing happens in the user's browser and no server-side processing is required. This means you can host BentoPDF as simple static files on any web server or hosting platform.
+Since PDFToolkit is fully client-side, all processing happens in the user's browser and no server-side processing is required. This means you can host PDFToolkit as simple static files on any web server or hosting platform.
 
 **Download from Releases (Recommended):**
 
-The easiest way to self-host is to download the pre-built distribution file from our [GitHub releases](https://github.com/alam00000/bentopdf/releases). Each release includes a `dist-{version}.zip` file that contains all necessary files for self-hosting.
+The easiest way to self-host is to download the pre-built distribution file. Each release includes a `dist-{version}.zip` file that contains all necessary files for self-hosting.
 
-1. Go to [BentoPDF Releases](https://github.com/alam00000/bentopdf/releases)
-2. Download the latest `dist-{version}.zip` file
-3. Extract the zip file
-4. Serve the extracted folder with your preferred web server
+1. Download the latest `dist-{version}.zip` file
+2. Extract the zip file
+3. Serve the extracted folder with your preferred web server
    
 **Navigate to the extracted Folder:**
 ```bash
@@ -227,7 +204,7 @@ The website can be accessible at:
 - PHP: ```http://localhost:8000/```
 - Ruby: ```http://localhost:8000/``` (default port can be changed)
 
-Simply serve the extracted folder using any static file server, and BentoPDF will work completely client-side without any server-side dependencies.
+Simply serve the extracted folder using any static file server, and PDFToolkit will work completely client-side without any server-side dependencies.
 
 **Build from Source (Advanced):**
 
@@ -235,8 +212,8 @@ If you prefer to build from source:
 
 ```bash
 # Clone the repository
-git clone https://github.com/alam00000/bentopdf.git
-cd bentopdf
+git clone https://github.com/alam00000/pdftoolkit.git
+cd pdftoolkit
 
 # Install dependencies
 npm install
@@ -256,26 +233,26 @@ The website can be accessible at: http://localhost:3000/
 
 **Subdirectory Hosting:**
 
-BentoPDF can also be hosted from a subdirectory (e.g., `example.com/tools/bentopdf/`):
+PDFToolkit can also be hosted from a subdirectory (e.g., `example.com/tools/pdftoolkit/`):
 
 ```bash
 
 # Example:
-# 1. Build the app with the specific BASE_URL. BASE_URL must have a trailing and leading slash. The BASE_URL can be any url of your choice. Here we are using /tools/bentopdf/ as an example.
+# 1. Build the app with the specific BASE_URL. BASE_URL must have a trailing and leading slash.
 
-BASE_URL=/tools/bentopdf/ npm run build
+BASE_URL=/tools/pdftoolkit/ npm run build
 
-# 2. Create the nested directory structure inside serve-test (or any folder of your choice for local testing. In case of production, create the nested directory structure inside the root directory)
-mkdir -p serve-test/tools/bentopdf
+# 2. Create the nested directory structure
+mkdir -p serve-test/tools/pdftoolkit
 
 # 3. Copy all files from the 'dist' folder into that nested directory
-cp -r dist/* serve-test/tools/bentopdf/
+cp -r dist/* serve-test/tools/pdftoolkit/
 
 # 4. Serve the 'serve-test' folder
 npx serve serve-test
 ```
 
-The website can be accessible at: ```http://localhost:3000/tools/bentopdf/```
+The website can be accessible at: ```http://localhost:3000/tools/pdftoolkit/```
 
 The `npm run package` command creates a `dist-{version}.zip` file that you can use for self-hosting.
 
@@ -283,13 +260,13 @@ The `npm run package` command creates a `dist-{version}.zip` file that you can u
 
 For a more robust setup with auto-restart capabilities:
 
-1. **Download the repo and create a `docker-compose.yml` file or use the one given in repo**:
+1. **Create a `docker-compose.yml` file**:
 
 ```yaml
 services:
-  bentopdf:
-    image: bentopdf/bentopdf:latest
-    container_name: bentopdf
+  pdftoolkit:
+    build: .
+    container_name: pdftoolkit
     ports:
       - '3000:8080'
     restart: unless-stopped
@@ -305,7 +282,7 @@ The application will be available at `http://localhost:3000`.
 
 ### 🏢 Simple Mode for Internal Use
 
-For organizations that want a clean, distraction-free interface focused solely on PDF tools, BentoPDF supports a **Simple Mode** that hides all branding and marketing content.
+For organizations that want a clean, distraction-free interface focused solely on PDF tools, PDFToolkit supports a **Simple Mode** that hides all branding and marketing content.
 
 **What Simple Mode does:**
 
@@ -318,7 +295,7 @@ For more details, see [SIMPLE_MODE.md](SIMPLE_MODE.md).
 
 ### 🔒 Security Features
 
-BentoPDF runs as a non-root user using nginx-unprivileged for enhanced security:
+PDFToolkit runs as a non-root user using nginx-unprivileged for enhanced security:
 
 - **Non-Root Execution**: Container runs with minimal privileges using nginx-unprivileged
 - **Port 8080**: Uses high port number to avoid requiring root privileges
@@ -327,27 +304,11 @@ BentoPDF runs as a non-root user using nginx-unprivileged for enhanced security:
 #### Basic Usage
 
 ```bash
-docker build -t bentopdf .
-docker run -p 8080:8080 bentopdf
+docker build -t pdftoolkit .
+docker run -p 8080:8080 pdftoolkit
 ```
 
 For detailed security configuration, see [SECURITY.md](SECURITY.md).
-
-### 📦 Version Management
-
-BentoPDF supports semantic versioning with multiple Docker tags available on both Docker Hub and GitHub Container Registry:
-
-**Docker Hub:**
-
-- **Latest**: `bentopdf/bentopdf:latest`
-- **Specific Version**: `bentopdf/bentopdf:1.0.0`
-- **Version with Prefix**: `bentopdf/bentopdf:v1.0.0`
-
-**GitHub Container Registry:**
-
-- **Latest**: `ghcr.io/alam00000/bentopdf:latest`
-- **Specific Version**: `ghcr.io/alam00000/bentopdf:1.0.0`
-- **Version with Prefix**: `ghcr.io/alam00000/bentopdf:v1.0.0`
 
 #### Quick Release
 
@@ -368,12 +329,7 @@ For detailed release instructions, see [RELEASE.md](RELEASE.md).
 
 #### Option 1: Run with npm
 
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/alam00000/bentopdf.git
-   cd bentopdf
-   ```
+1. **Clone or download the repository**
 
 2. **Install Dependencies**:
 
@@ -389,14 +345,7 @@ For detailed release instructions, see [RELEASE.md](RELEASE.md).
 
 #### Option 2: Build and Run with Docker Compose
 
-1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/alam00000/bentopdf.git
-   cd bentopdf
-   ```
-
-2. **Run with Docker Compose**:
+1. **Run with Docker Compose**:
 
    ```bash
    docker-compose -f docker-compose.dev.yml up -d
@@ -416,7 +365,7 @@ For detailed release instructions, see [RELEASE.md](RELEASE.md).
 
 ## 🛠️ Tech Stack & Background
 
-BentoPDF was originally built using **HTML**, **CSS**, and **vanilla JavaScript**. As the project grew, it was migrated to a modern stack for better maintainability and scalability:
+PDFToolkit is built using modern web technologies for better maintainability and scalability:
 
 - **Vite**: A fast build tool for modern web development.
 - **TypeScript**: For type safety and an improved developer experience.
@@ -437,26 +386,22 @@ BentoPDF was originally built using **HTML**, **CSS**, and **vanilla JavaScript*
 - **PDF to Office**: Converts PDF files into editable Word, Excel, and PowerPoint formats.
 - **Office to PDF**: Converts Word, Excel, and PowerPoint documents into optimized PDFs.
 
-Contributions and discussions on the roadmap are welcome! Join the conversation via [Discord](https://discord.gg/AP2Y97juZT).
-
 ---
 
 ## 🤝 Contributing
 
 We welcome contributions from the community! Here's how you can get started:
 
-1.  **Fork the repository** and create your branch from `main`.
+1.  Fork the repository and create your branch from `main`.
 2.  Follow the **Getting Started** steps to set up your local environment.
 3.  Make your changes and commit them with a clear message.
-4.  **Open a Pull Request** and describe the changes you've made.
-
-Have an idea for a new tool or an improvement? [Open an issue](https://github.com/alam00000/bentopdf/issues) to discuss it first.
+4.  Open a Pull Request and describe the changes you've made.
 
 ---
 
 ## Special Thanks
 
-BentoPDF wouldn't be possible without the amazing open-source tools and libraries that power it. We'd like to extend our heartfelt thanks to the creators and maintainers of:
+PDFToolkit wouldn't be possible without the amazing open-source tools and libraries that power it. We'd like to extend our heartfelt thanks to the creators and maintainers of:
 
 - **[PDFLib.js](https://pdf-lib.js.org/)** – For enabling powerful client-side PDF manipulation.
 - **[PDF.js](https://mozilla.github.io/pdf.js/)** – For the robust PDF rendering engine in the browser.

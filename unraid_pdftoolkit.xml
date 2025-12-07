@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>pdftoolkit</Name>
+  <Repository>pdftoolkit/pdftoolkit</Repository>
+  <Registry>https://hub.docker.com/r/pdftoolkit/pdftoolkit/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/pdftoolkit/pdftoolkit</Support>
+  <Project>https://www.pdftoolkit.com/</Project>
+  <Overview>
+PDFToolkit is a privacy first PDF Toolkit&#13;
+&#13;
+https://hub.docker.com/r/pdftoolkit/pdftoolkit/</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/pdftoolkit/pdftoolkit/refs/heads/main/public/images/pdftoolkit-logo.svg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Web Port for Nginx and GUI" Target="8080" Default="8080" Mode="tcp" Description="Port used for PDFToolkit's web GUI" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+</Container>
+

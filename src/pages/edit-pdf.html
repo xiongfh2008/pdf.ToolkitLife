@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDF Editor - BentoPDF</title>
+    <title>PDF Editor - PDFToolkit</title>
     <meta name="description"
         content="Annotate, highlight, redact, comment, add shapes/images, search, and view PDFs. Free, secure, and runs entirely in your browser.">
-    <link rel="icon" type="image/png" href="../../images/favicon.svg" />
+    <link rel="icon" type="image/png" href="../../images/pdftoolkit-logo.svg" />
     <link href="../../src/css/styles.css" rel="stylesheet" />
 </head>
 
@@ -16,9 +16,9 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center cursor-pointer" id="home-logo">
-                    <img src="../../images/favicon.svg" alt="Bento PDF Logo" class="h-8 w-8" />
+                    <img src="../../images/pdftoolkit-logo.svg" alt="PDFToolkit Logo" class="h-8 w-8" />
                     <span class="text-white font-bold text-xl ml-2">
-                        <a href="../../index.html">BentoPDF</a>
+                        <a href="../../index.html">PDFToolkit</a>
                     </span>
                 </div>
 
@@ -65,7 +65,7 @@
             <button id="back-to-tools"
                 class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 mb-6 font-semibold">
                 <i data-lucide="arrow-left" class="cursor-pointer"></i>
-                <span class="cursor-pointer"> Back to Tools </span>
+                <span class="cursor-pointer" data-i18n="common.backToTools"> Back to Tools </span>
             </button>
 
             <h1 class="text-2xl font-bold text-white mb-2">PDF Editor</h1>
@@ -81,7 +81,7 @@
                         drag and
                         drop</p>
                     <p class="text-xs text-gray-500">PDF file</p>
-                    <p class="text-xs text-gray-500">Your files never leave your device.</p>
+                    <p class="text-xs text-gray-500" data-i18n="common.filesNeverLeave">Your files never leave your device.</p>
                 </div>
                 <input id="file-input" type="file" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
                     accept="application/pdf">
@@ -121,11 +121,11 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
                 <div class="mb-8 md:mb-0">
                     <div class="flex items-center justify-center md:justify-start mb-4">
-                        <img src="../../images/favicon.svg" alt="Bento PDF Logo" class="h-10 w-10 mr-3" />
-                        <span class="text-xl font-bold text-white">BentoPDF</span>
+                        <img src="../../images/pdftoolkit-logo.svg" alt="PDFToolkit Logo" class="h-10 w-10 mr-3" />
+                        <span class="text-xl font-bold text-white">PDFToolkit</span>
                     </div>
                     <p class="text-gray-400 text-sm">
-                        &copy; 2025 BentoPDF. All rights reserved.
+                        &copy; 2025 PDFToolkit. All rights reserved.
                     </p>
                     <p class="text-gray-500 text-xs mt-2">
                         Version <span id="app-version"></span>
@@ -133,7 +133,7 @@
                 </div>
 
                 <div>
-                    <h3 class="font-bold text-white mb-4">Company</h3>
+                    <h3 class="font-bold text-white mb-4" data-i18n="footer.company">Company</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li>
                             <a href="../../about.html" class="hover:text-indigo-400">About Us</a>
@@ -148,7 +148,7 @@
                 </div>
 
                 <div>
-                    <h3 class="font-bold text-white mb-4">Legal</h3>
+                    <h3 class="font-bold text-white mb-4" data-i18n="footer.legal">Legal</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li>
                             <a href="../../licensing.html" class="hover:text-indigo-400">Licensing</a>
@@ -163,9 +163,9 @@
                 </div>
 
                 <div>
-                    <h3 class="font-bold text-white mb-4">Follow Us</h3>
+                    <h3 class="font-bold text-white mb-4" data-i18n="footer.follow">Follow Us</h3>
                     <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://github.com/alam00000/bentopdf" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/alam00000/pdftoolkit" target="_blank" rel="noopener noreferrer"
                             class="text-gray-400 hover:text-indigo-400" title="GitHub">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -173,22 +173,22 @@
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <a href="https://discord.gg/AP2Y97juZT" target="_blank" rel="noopener noreferrer"
+                        <a href="#" target="_blank" rel="noopener noreferrer"
                             class="text-gray-400 hover:text-indigo-400" title="Discord">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/thebentopdf/" class="text-gray-400 hover:text-indigo-400"
+                        <a href="https://www.instagram.com/thepdftoolkit/" class="text-gray-400 hover:text-indigo-400"
                             title="Instagram">
                             <i data-lucide="instagram"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/bentopdf/" class="text-gray-400 hover:text-indigo-400"
+                        <a href="https://www.linkedin.com/company/pdftoolkit/" class="text-gray-400 hover:text-indigo-400"
                             title="LinkedIn">
                             <i data-lucide="linkedin"></i>
                         </a>
-                        <a href="https://x.com/BentoPDF" class="text-gray-400 hover:text-indigo-400"
+                        <a href="https://x.com/PDFToolkit" class="text-gray-400 hover:text-indigo-400"
                             title="X (Twitter)">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
@@ -206,6 +206,16 @@
     <script type="module" src="../version.ts"></script>
     <script type="module" src="../js/logic/edit-pdf-page.ts"></script>
     <script type="module" src="../js/mobileMenu.ts"></script>
+
+  <script type="module" src="../js/i18n/index.ts"></script>
+  <script type="module">
+    import { LanguageSwitcher } from '../js/components/LanguageSwitcher.ts';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      new LanguageSwitcher('language-switcher-desktop');
+      new LanguageSwitcher('language-switcher-mobile');
+    });
+  </script>
 </body>
 
 </html>

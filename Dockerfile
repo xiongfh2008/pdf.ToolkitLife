@@ -14,7 +14,8 @@ RUN npm run build -- --mode production
 # Production stage
 FROM nginxinc/nginx-unprivileged:stable-alpine-slim
 
-LABEL org.opencontainers.image.source="https://github.com/alam00000/bentopdf"
+LABEL org.opencontainers.image.title="PDFToolkit"
+LABEL org.opencontainers.image.description="Privacy-first PDF toolkit"
 
 COPY --chown=nginx:nginx --from=builder /app/dist /usr/share/nginx/html
 COPY --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf

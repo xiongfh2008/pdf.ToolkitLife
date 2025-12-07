@@ -1941,9 +1941,9 @@ Right
 
                                                                                                     <div class="mb-4 p-3 bg-blue-900/20 border border-blue-700/50 rounded-lg" >
                                                                                                         <p class="text-sm text-blue-300" >
-                                                                                                            <strong>Note on XFA Forms: </strong> XFA (XML Forms Architecture) is a legacy format that's only supported by certain PDF viewers like BentoPDF and Firefox. 
+                                                                                                            <strong>Note on XFA Forms: </strong> XFA (XML Forms Architecture) is a legacy format that's only supported by certain PDF viewers like PDFToolkit and Firefox. 
         If you open an XFA PDF in other software and see blank pages or no form fields, it means that viewer doesn't support XFA. 
-        To view and fill XFA forms properly, use Firefox or BentoPDF's Form Filler.
+        To view and fill XFA forms properly, use Firefox or PDFToolkit's Form Filler.
     </p>
     </div>
     

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="logoGradient" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#3730A3"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Main Document Shape -->
+  <path d="M16 8H40L52 20V52C52 54.2091 50.2091 56 48 56H16C13.7909 56 12 54.2091 12 52V12C12 9.79086 13.7909 8 16 8Z" fill="url(#logoGradient)" filter="url(#shadow)"/>
+  
+  <!-- Folded Corner -->
+  <path d="M40 8V20H52" fill="#E0E7FF" fill-opacity="0.2"/>
+  <path d="M40 8L52 20H42C40.8954 20 40 19.1046 40 18V8Z" fill="#C7D2FE"/>
+  
+  <!-- Content Lines -->
+  <rect x="20" y="24" width="24" height="3" rx="1.5" fill="white" fill-opacity="0.9"/>
+  <rect x="20" y="32" width="24" height="3" rx="1.5" fill="white" fill-opacity="0.9"/>
+  <rect x="20" y="40" width="16" height="3" rx="1.5" fill="white" fill-opacity="0.9"/>
+  
+  <!-- Gear/Settings Icon Overlay -->
+  <circle cx="46" cy="46" r="12" fill="#10B981" stroke="white" stroke-width="2"/>
+  <path d="M46 40V42M46 50V52M52 46H50M40 46H42M50.24 41.76L48.83 43.17M41.76 50.24L43.17 48.83M50.24 50.24L48.83 48.83M41.76 41.76L43.17 43.17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="46" cy="46" r="3" fill="white"/>
+</svg>

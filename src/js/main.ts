@@ -8,6 +8,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 import '../css/styles.css';
 import { formatShortcutDisplay, formatStars } from './utils/helpers.js';
 import { APP_VERSION, injectVersion } from '../version.js';
+import { i18n } from './i18n/index.js';
 
 const init = () => {
   pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
@@ -30,9 +31,9 @@ const init = () => {
           <div class="container mx-auto px-4">
             <div class="flex justify-start items-center h-16">
               <div class="flex-shrink-0 flex items-center cursor-pointer" id="home-logo">
-                <img src="images/favicon.svg" alt="Bento PDF Logo" class="h-8 w-8">
+                <img src="images/pdftoolkit-logo.svg" alt="PDFToolkit Logo" class="h-8 w-8">
                 <span class="text-white font-bold text-xl ml-2">
-                  <a href="index.html">BentoPDF</a>
+                  <a href="index.html">PDFToolkit</a>
                 </span>
               </div>
             </div>
@@ -46,10 +47,6 @@ const init = () => {
         heroSection.style.display = 'none';
       }
 
-      const githubLink = document.querySelector('a[href*="github.com/alam00000/bentopdf"]');
-      if (githubLink) {
-        (githubLink as HTMLElement).style.display = 'none';
-      }
 
       const featuresSection = document.getElementById('features-section');
       if (featuresSection) {
@@ -96,11 +93,11 @@ const init = () => {
         simpleFooter.innerHTML = `
           <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-              <img src="images/favicon.svg" alt="Bento PDF Logo" class="h-8 w-8 mr-2">
-              <span class="text-white font-bold text-lg">BentoPDF</span>
+              <img src="images/pdftoolkit-logo.svg" alt="PDFToolkit Logo" class="h-8 w-8 mr-2">
+              <span class="text-white font-bold text-lg">PDFToolkit</span>
             </div>
             <p class="text-gray-400 text-sm">
-              &copy; 2025 BentoPDF. All rights reserved.
+              &copy; 2025 PDFToolkit. All rights reserved.
             </p>
             <p class="text-gray-500 text-xs mt-2">
               Version <span id="app-version-simple">${APP_VERSION}</span>
@@ -115,7 +112,7 @@ const init = () => {
         (divider as HTMLElement).style.display = 'none';
       });
 
-      document.title = 'BentoPDF - PDF Tools';
+      document.title = 'PDFToolkit - PDF Tools';
 
       const toolsHeader = document.getElementById('tools-header');
       if (toolsHeader) {
@@ -155,15 +152,17 @@ const init = () => {
       : 'Ctrl + K';
   }
 
-  dom.toolGrid.textContent = '';
+  // Function to render tools with i18n support
+  const renderTools = () => {
+    dom.toolGrid.textContent = '';
 
-  categories.forEach((category) => {
+    categories.forEach((category) => {
     const categoryGroup = document.createElement('div');
     categoryGroup.className = 'category-group col-span-full';
 
     const title = document.createElement('h2');
     title.className = 'text-xl font-bold text-indigo-400 mb-4 mt-8 first:mt-0 text-white';
-    title.textContent = category.name;
+    title.textContent = (category as any).nameKey ? i18n.t((category as any).nameKey) : category.name;
 
     const toolsContainer = document.createElement('div');
     toolsContainer.className =
@@ -190,14 +189,14 @@ const init = () => {
 
       const toolName = document.createElement('h3');
       toolName.className = 'font-semibold text-white';
-      toolName.textContent = tool.name;
+      toolName.textContent = (tool as any).nameKey ? i18n.t((tool as any).nameKey) : tool.name;
 
       toolCard.append(icon, toolName);
 
       if (tool.subtitle) {
         const toolSubtitle = document.createElement('p');
         toolSubtitle.className = 'text-xs text-gray-400 mt-1 px-2';
-        toolSubtitle.textContent = tool.subtitle;
+        toolSubtitle.textContent = (tool as any).subtitleKey ? i18n.t((tool as any).subtitleKey) : tool.subtitle;
         toolCard.appendChild(toolSubtitle);
       }
 
@@ -206,6 +205,18 @@ const init = () => {
 
     categoryGroup.append(title, toolsContainer);
     dom.toolGrid.appendChild(categoryGroup);
+  });
+
+    // Reinitialize Lucide icons after rendering
+    createIcons({ icons });
+  };
+
+  // Initial render
+  renderTools();
+
+  // Re-render tools when language changes
+  window.addEventListener('languageChanged', () => {
+    renderTools();
   });
 
   const searchBar = document.getElementById('search-bar');
@@ -305,32 +316,7 @@ const init = () => {
   }
 
   createIcons({ icons });
-  console.log('Please share our tool and share the love!');
-
-
-  const githubStarsElements = [
-    document.getElementById('github-stars-desktop'),
-    document.getElementById('github-stars-mobile')
-  ];
-
-  if (githubStarsElements.some(el => el) && !__SIMPLE_MODE__) {
-    fetch('https://api.github.com/repos/alam00000/bentopdf')
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.stargazers_count !== undefined) {
-          const formattedStars = formatStars(data.stargazers_count);
-          githubStarsElements.forEach(el => {
-            if (el) el.textContent = formattedStars;
-          });
-        }
-      })
-      .catch(() => {
-        githubStarsElements.forEach(el => {
-          if (el) el.textContent = '-';
-        });
-      });
-  }
-
+  console.log('Welcome to PDFToolkit - Your Privacy First PDF Solution!');
 
   // Initialize Shortcuts System
   ShortcutsManager.init();

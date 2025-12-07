@@ -1,6 +1,6 @@
 ---
 name: '🐛 Bug / 💡 Feature / ❓ Question'
-about: 'Report a bug, request a feature, or ask a question about BentoPDF'
+about: 'Report a bug, request a feature, or ask a question about PDFToolkit'
 title: '(Bug) <short title>, (Feature) <short title>, or (Question) <short title>'
 labels: ['needs triage']
 assignees: []
@@ -29,7 +29,7 @@ Provide a clear and concise description of the issue, feature request, or questi
 3. Observe error: '...'
 
 **Expected Behavior:**
-Describe what you expected BentoPDF to do.
+Describe what you expected PDFToolkit to do.
 
 **Actual Behavior:**
 Describe what actually happened, including error messages.
