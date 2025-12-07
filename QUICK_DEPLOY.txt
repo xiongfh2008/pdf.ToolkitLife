@@ -20,13 +20,15 @@
 🔍 部署前检查：
    npm run cloudflare:check
 
-⚠️  关于构建日志：
-   看到 "(!)" 是正常的警告，不影响部署成功
+⚠️  部署后出现 404 错误？
+   查看: QUICK_FIX_404.txt ⭐⭐⭐
 
 📖 详细说明：
-   • DEPLOYMENT_ERROR_FIX.md  (错误修复说明) ⭐
-   • DEPLOYMENT_FIX.md        (完整部署说明)
-   • CLOUDFLARE_DEPLOYMENT.md (详细部署指南)
+   • QUICK_FIX_404.txt         (404 快速修复) ⭐⭐⭐
+   • TROUBLESHOOTING_404.md    (404 详细排查)
+   • CLOUDFLARE_SETTINGS_GUIDE.md (正确配置指南)
+   • DEPLOYMENT_ERROR_FIX.md   (wrangler.toml 错误修复)
+   • DEPLOYMENT_FIX.md         (完整部署说明)
 
 🎯 部署步骤：
    1. git push 代码到仓库
