@@ -22,7 +22,11 @@
     "release:major": "node scripts/release.js major",
     "serve:simple": "SIMPLE_MODE=true npm run build && npm run preview -- --port 3000",
     "serve": "npm run build && npm run preview -- --port 3000",
-    "package": "node scripts/package-dist.js"
+    "package": "node scripts/package-dist.js",
+    "deploy:check": "node scripts/pre-deploy-check.js",
+    "cloudflare:check": "node scripts/cloudflare-check.js",
+    "deploy:preview": "wrangler pages deploy dist --project-name=pdftoolkit",
+    "deploy:production": "wrangler pages deploy dist --project-name=pdftoolkit --branch=main"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",

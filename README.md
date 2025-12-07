@@ -256,6 +256,28 @@ The website can be accessible at: ```http://localhost:3000/tools/pdftoolkit/```
 
 The `npm run package` command creates a `dist-{version}.zip` file that you can use for self-hosting.
 
+### ☁️ Deploy to Cloudflare Pages (Recommended)
+
+PDFToolkit is optimized for Cloudflare Pages deployment with automatic CDN, SSL, and global performance.
+
+**Quick Deploy:**
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Connect your repository to [Cloudflare Pages](https://pages.cloudflare.com/)
+3. Cloudflare will auto-detect the settings:
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Node version: 22.x
+
+For detailed deployment instructions, see [CLOUDFLARE_DEPLOYMENT.md](CLOUDFLARE_DEPLOYMENT.md).
+
+**Features:**
+- ✅ Global CDN with 200+ locations
+- ✅ Automatic HTTPS
+- ✅ Free custom domain support
+- ✅ Automatic deployments on Git push
+- ✅ Optimized caching and compression
+
 ### 🚀 Run with Docker Compose (Recommended)
 
 For a more robust setup with auto-restart capabilities:

@@ -43,6 +43,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    target: 'esnext',
+    chunkSizeWarningLimit: 4000, // 增加到4MB以避免警告
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
@@ -69,6 +71,18 @@ export default defineConfig(({ mode }) => ({
         'jpg-to-pdf': resolve(__dirname, 'src/pages/jpg-to-pdf.html'),
 
       },
+      output: {
+        manualChunks: {
+          'pdf-worker': ['pdfjs-dist'],
+          'pdf-libs': ['pdf-lib', 'pdfkit', 'blob-stream'],
+          'image-libs': ['html2canvas', 'cropperjs', 'heic2any'],
+          'compression': ['jszip', 'archiver'],
+        },
+      },
+      external: [
+        // 标记这些模块为外部模块，避免浏览器兼容性警告
+        /^node:*/,
+      ],
     },
   },
   test: {
