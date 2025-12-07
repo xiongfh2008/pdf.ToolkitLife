@@ -12,7 +12,6 @@ const REQUIRED_FILES = [
   { path: 'public/_headers', desc: 'HTTP Headers 配置' },
   { path: 'public/_redirects', desc: 'SPA 路由重定向' },
   { path: '.node-version', desc: 'Node.js 版本锁定' },
-  { path: 'wrangler.toml', desc: 'Cloudflare 配置' },
   { path: 'package.json', desc: 'Node.js 项目配置' },
   { path: 'vite.config.ts', desc: 'Vite 构建配置' },
 ];

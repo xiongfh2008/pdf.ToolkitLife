@@ -11,6 +11,7 @@
 | `.node-version` | 锁定 Node.js 版本为 22.16.0 | ✅ 已创建 |
 | `CLOUDFLARE_DEPLOYMENT.md` | 完整部署指南 | ✅ 已创建 |
 | `scripts/cloudflare-check.js` | 部署前检查脚本 | ✅ 已创建 |
+| ~~`wrangler.toml`~~ | ~~已删除~~（Pages 不需要） | ✅ 已优化 |
 
 ### 2. 新增的 NPM 脚本
 
@@ -101,7 +102,7 @@ rendering chunks...
    - 点击 **Save and Deploy**
    - 等待构建完成（约 30-60 秒）
 
-### 方式 2: 通过 Wrangler CLI
+### 方式 2: 通过 Wrangler CLI（可选）
 
 ```bash
 # 安装 Wrangler (如果还没安装)
@@ -110,12 +111,17 @@ npm install -g wrangler
 # 登录 Cloudflare
 wrangler login
 
-# 部署到预览环境
-npm run deploy:preview
+# 首次部署（会提示创建项目）
+npx wrangler pages deploy dist
 
-# 部署到生产环境
-npm run deploy:production
+# 后续部署
+npm run pages:deploy
+
+# 部署到生产分支
+npm run pages:deploy:production
 ```
+
+**注意**: 推荐使用方式 1（Dashboard），更简单且自动化。
 
 ---
 

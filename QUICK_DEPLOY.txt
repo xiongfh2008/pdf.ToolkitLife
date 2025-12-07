@@ -15,7 +15,7 @@
    • public/_headers      (安全头 + CORS)
    • public/_redirects    (SPA 路由)
    • .node-version        (Node.js 版本)
-   • wrangler.toml        (Cloudflare 配置)
+   ✅ wrangler.toml 已删除（Pages 不需要）
 
 🔍 部署前检查：
    npm run cloudflare:check
@@ -24,7 +24,8 @@
    看到 "(!)" 是正常的警告，不影响部署成功
 
 📖 详细说明：
-   • DEPLOYMENT_FIX.md        (完整修复说明)
+   • DEPLOYMENT_ERROR_FIX.md  (错误修复说明) ⭐
+   • DEPLOYMENT_FIX.md        (完整部署说明)
    • CLOUDFLARE_DEPLOYMENT.md (详细部署指南)
 
 🎯 部署步骤：
