@@ -321,6 +321,11 @@ const init = () => {
   // Initialize Shortcuts System
   ShortcutsManager.init();
 
+  // Ensure shortcuts modal is hidden on initialization (防止意外弹出)
+  if (dom.shortcutsModal) {
+    dom.shortcutsModal.classList.add('hidden');
+  }
+
   // Tab switching for settings modal
   const shortcutsTabBtn = document.getElementById('shortcuts-tab-btn');
   const preferencesTabBtn = document.getElementById('preferences-tab-btn');
@@ -403,12 +408,16 @@ const init = () => {
     dom.openShortcutsBtn.addEventListener('click', () => {
       renderShortcutsList();
       dom.shortcutsModal.classList.remove('hidden');
+      // Update URL hash to indicate settings are open
+      history.pushState(null, '', '#settings');
     });
   }
 
   if (dom.closeShortcutsModalBtn) {
     dom.closeShortcutsModalBtn.addEventListener('click', () => {
       dom.shortcutsModal.classList.add('hidden');
+      // Remove hash from URL when closing
+      history.pushState(null, '', window.location.pathname);
     });
   }
 
@@ -417,9 +426,27 @@ const init = () => {
     dom.shortcutsModal.addEventListener('click', (e) => {
       if (e.target === dom.shortcutsModal) {
         dom.shortcutsModal.classList.add('hidden');
+        // Remove hash from URL when closing
+        history.pushState(null, '', window.location.pathname);
       }
     });
   }
+
+  // Handle #settings hash in URL (只在URL明确包含#settings时才打开)
+  if (window.location.hash === '#settings') {
+    setTimeout(() => {
+      renderShortcutsList();
+      dom.shortcutsModal?.classList.remove('hidden');
+    }, 100);
+  }
+
+  // Handle ESC key to close settings modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dom.shortcutsModal && !dom.shortcutsModal.classList.contains('hidden')) {
+      dom.shortcutsModal.classList.add('hidden');
+      history.pushState(null, '', window.location.pathname);
+    }
+  });
 
   if (dom.resetShortcutsBtn) {
     dom.resetShortcutsBtn.addEventListener('click', async () => {
