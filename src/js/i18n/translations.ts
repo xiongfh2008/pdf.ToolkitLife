@@ -22,6 +22,12 @@ export const translations: Record<string, Record<string, string>> = {
     'meta.faq.title': 'Frequently Asked Questions - PDFToolkit',
     'meta.faq.description': 'Find answers to common questions about PDFToolkit, our privacy practices, file size limits, and how our tools work.',
     'meta.faq.keywords': 'pdftoolkit faq, pdf tools questions, privacy questions, how to use pdf tools, pdf help',
+    'meta.privacy.title': 'Privacy Policy - PDFToolkit',
+    'meta.privacy.description': 'PDFToolkit Privacy Policy - Learn how we protect your privacy with 100% client-side processing. Your files never leave your device.',
+    'meta.privacy.keywords': 'pdftoolkit privacy policy, data privacy, client-side processing, secure pdf tools, no data collection',
+    'meta.terms.title': 'Terms and Conditions - PDFToolkit',
+    'meta.terms.description': 'PDFToolkit Terms and Conditions - Read our terms of service for using our free, privacy-first PDF tools.',
+    'meta.terms.keywords': 'pdftoolkit terms, terms of service, conditions of use, pdf tools terms, user agreement',
     
     // Navigation
     'nav.home': 'Home',
@@ -325,6 +331,12 @@ export const translations: Record<string, Record<string, string>> = {
     'meta.faq.title': '常见问题 - PDF工具箱',
     'meta.faq.description': '查找关于PDF工具箱、隐私实践、文件大小限制以及工具如何工作的常见问题答案。',
     'meta.faq.keywords': 'pdf工具箱常见问题, pdf工具问题, 隐私问题, 如何使用pdf工具, pdf帮助',
+    'meta.privacy.title': '隐私政策 - PDF工具箱',
+    'meta.privacy.description': 'PDF工具箱隐私政策 - 了解我们如何通过100%客户端处理保护您的隐私。您的文件永不离开设备。',
+    'meta.privacy.keywords': 'pdf工具箱隐私政策, 数据隐私, 客户端处理, 安全pdf工具, 不收集数据',
+    'meta.terms.title': '条款和条件 - PDF工具箱',
+    'meta.terms.description': 'PDF工具箱条款和条件 - 阅读使用我们免费、隐私优先PDF工具的服务条款。',
+    'meta.terms.keywords': 'pdf工具箱条款, 服务条款, 使用条件, pdf工具条款, 用户协议',
     
     // Navigation
     'nav.home': '首页',
@@ -628,6 +640,12 @@ export const translations: Record<string, Record<string, string>> = {
     'meta.faq.title': '常見問題 - PDF工具箱',
     'meta.faq.description': '查找關於PDF工具箱、隱私實踐、檔案大小限制以及工具如何運作的常見問題答案。',
     'meta.faq.keywords': 'pdf工具箱常見問題, pdf工具問題, 隱私問題, 如何使用pdf工具, pdf幫助',
+    'meta.privacy.title': '隱私政策 - PDF工具箱',
+    'meta.privacy.description': 'PDF工具箱隱私政策 - 了解我們如何通過100%客戶端處理保護您的隱私。您的檔案永不離開裝置。',
+    'meta.privacy.keywords': 'pdf工具箱隱私政策, 資料隱私, 客戶端處理, 安全pdf工具, 不收集資料',
+    'meta.terms.title': '條款和條件 - PDF工具箱',
+    'meta.terms.description': 'PDF工具箱條款和條件 - 閱讀使用我們免費、隱私優先PDF工具的服務條款。',
+    'meta.terms.keywords': 'pdf工具箱條款, 服務條款, 使用條件, pdf工具條款, 用戶協議',
     
     // Navigation
     'nav.home': '首頁',
@@ -774,6 +792,12 @@ export const translations: Record<string, Record<string, string>> = {
     'meta.faq.title': 'よくある質問 - PDFツールキット',
     'meta.faq.description': 'PDFツールキット、プライバシー実践、ファイルサイズ制限、ツールの仕組みに関するよくある質問の回答を見つけてください。',
     'meta.faq.keywords': 'pdfツールキット faq, pdfツール 質問, プライバシー 質問, pdfツールの使い方, pdfヘルプ',
+    'meta.privacy.title': 'プライバシーポリシー - PDFツールキット',
+    'meta.privacy.description': 'PDFツールキットのプライバシーポリシー - 100%クライアントサイド処理でプライバシーを保護する方法をご覧ください。ファイルはデバイスから離れません。',
+    'meta.privacy.keywords': 'pdfツールキット プライバシーポリシー, データプライバシー, クライアントサイド処理, 安全なpdfツール, データ収集なし',
+    'meta.terms.title': '利用規約 - PDFツールキット',
+    'meta.terms.description': 'PDFツールキットの利用規約 - 無料でプライバシー優先のPDFツールを使用するための利用規約をお読みください。',
+    'meta.terms.keywords': 'pdfツールキット 利用規約, サービス規約, 利用条件, pdfツール 規約, ユーザー契約',
     
     // Navigation
     'nav.home': 'ホーム',
@@ -907,6 +931,12 @@ export const translations: Record<string, Record<string, string>> = {
     'meta.faq.title': '자주 묻는 질문 - PDF툴킷',
     'meta.faq.description': 'PDF툴킷, 개인정보 보호 관행, 파일 크기 제한 및 도구 작동 방식에 대한 일반적인 질문에 대한 답변을 찾아보세요.',
     'meta.faq.keywords': 'pdf툴킷 faq, pdf 도구 질문, 개인정보 보호 질문, pdf 도구 사용법, pdf 도움말',
+    'meta.privacy.title': '개인정보 처리방침 - PDF툴킷',
+    'meta.privacy.description': 'PDF툴킷 개인정보 처리방침 - 100% 클라이언트 측 처리로 개인정보를 보호하는 방법을 알아보세요. 파일이 기기를 떠나지 않습니다.',
+    'meta.privacy.keywords': 'pdf툴킷 개인정보 처리방침, 데이터 프라이버시, 클라이언트 측 처리, 보안 pdf 도구, 데이터 수집 없음',
+    'meta.terms.title': '이용약관 - PDF툴킷',
+    'meta.terms.description': 'PDF툴킷 이용약관 - 무료 개인정보 보호 우선 PDF 도구 사용에 대한 서비스 약관을 읽어보세요.',
+    'meta.terms.keywords': 'pdf툴킷 약관, 서비스 약관, 이용 조건, pdf 도구 약관, 사용자 계약',
     
     // Navigation
     'nav.home': '홈',
@@ -1038,6 +1068,12 @@ export const translations: Record<string, Record<string, string>> = {
     'meta.faq.title': 'Preguntas Frecuentes - PDFToolkit',
     'meta.faq.description': 'Encuentre respuestas a preguntas comunes sobre PDFToolkit, nuestras prácticas de privacidad, límites de tamaño de archivo y cómo funcionan nuestras herramientas.',
     'meta.faq.keywords': 'pdftoolkit faq, preguntas herramientas pdf, preguntas privacidad, cómo usar herramientas pdf, ayuda pdf',
+    'meta.privacy.title': 'Política de Privacidad - PDFToolkit',
+    'meta.privacy.description': 'Política de Privacidad de PDFToolkit - Aprenda cómo protegemos su privacidad con procesamiento 100% del lado del cliente. Sus archivos nunca salen de su dispositivo.',
+    'meta.privacy.keywords': 'política de privacidad pdftoolkit, privacidad de datos, procesamiento del lado del cliente, herramientas pdf seguras, sin recopilación de datos',
+    'meta.terms.title': 'Términos y Condiciones - PDFToolkit',
+    'meta.terms.description': 'Términos y Condiciones de PDFToolkit - Lea nuestros términos de servicio para usar nuestras herramientas PDF gratuitas y de privacidad primero.',
+    'meta.terms.keywords': 'términos pdftoolkit, términos de servicio, condiciones de uso, términos herramientas pdf, acuerdo de usuario',
     
     // Navigation
     'nav.home': 'Inicio',

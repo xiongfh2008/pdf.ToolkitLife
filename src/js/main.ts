@@ -303,6 +303,14 @@ const init = () => {
   createIcons({ icons });
   console.log('Welcome to PDFToolkit - Your Privacy First PDF Solution!');
 
+  // Ensure all modals are hidden on initialization (防止意外弹出)
+  if (dom.alertModal) {
+    dom.alertModal.classList.add('hidden');
+  }
+  if (dom.warningModal) {
+    dom.warningModal.classList.add('hidden');
+  }
+
   // Full-width toggle functionality
   const fullWidthToggle = document.getElementById('full-width-toggle') as HTMLInputElement;
   const toolInterface = document.getElementById('tool-interface');
