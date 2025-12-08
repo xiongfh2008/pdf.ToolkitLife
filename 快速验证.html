@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>语言切换按钮快速验证</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: #111;
+      color: #0f0;
+      padding: 20px;
+    }
+    button {
+      background: #222;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0f0;
+      color: #000;
+    }
+    .result {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #0f0;
+      background: #222;
+    }
+    .success { color: #0f0; }
+    .error { color: #f00; }
+    .info { color: #0ff; }
+  </style>
+</head>
+<body>
+  <h1>🔍 语言切换按钮验证工具</h1>
+  <p>在主网站页面（localhost:5173）打开开发者工具（F12），</p>
+  <p>然后在 Console 中粘贴以下代码：</p>
+  
+  <div class="result">
+    <h3>验证代码（复制粘贴到Console）：</h3>
+    <pre style="background: #000; padding: 10px; overflow-x: auto;">
+// ====== 语言切换按钮验证脚本 ======
+
+console.log('%c🔍 开始检查语言切换按钮...', 'color: #06b6d4; font-size: 16px; font-weight: bold;');
+
+// 1. 检查容器
+const desktop = document.getElementById('language-switcher-desktop');
+const mobile = document.getElementById('language-switcher-mobile');
+
+console.log('1️⃣ 容器检查:');
+console.log('   Desktop容器:', desktop ? '✅ 存在' : '❌ 不存在');
+console.log('   Mobile容器:', mobile ? '✅ 存在' : '❌ 不存在');
+
+// 2. 检查按钮
+const buttons = document.querySelectorAll('.btn-tech-lang, #language-button');
+console.log('2️⃣ 按钮检查:');
+console.log('   找到按钮数量:', buttons.length);
+
+if (buttons.length > 0) {
+  buttons.forEach((btn, index) => {
+    const styles = window.getComputedStyle(btn);
+    const rect = btn.getBoundingClientRect();
+    
+    console.log(`   按钮 ${index + 1}:`, {
+      display: styles.display,
+      visibility: styles.visibility,
+      opacity: styles.opacity,
+      zIndex: styles.zIndex,
+      backgroundColor: styles.backgroundColor,
+      borderColor: styles.borderColor,
+      color: styles.color,
+      width: rect.width,
+      height: rect.height,
+      位置: `(${Math.round(rect.x)}, ${Math.round(rect.y)})`
+    });
+    
+    // 判断是否真正可见
+    const isVisible = rect.width > 0 && rect.height > 0 && 
+                     styles.display !== 'none' && 
+                     styles.visibility !== 'hidden' &&
+                     parseFloat(styles.opacity) > 0;
+    
+    console.log(`   ⭐ 按钮 ${index + 1} ${isVisible ? '✅ 可见' : '❌ 不可见'}`);
+  });
+} else {
+  console.log('   ❌ 未找到语言切换按钮');
+}
+
+// 3. 检查CSS类
+console.log('3️⃣ CSS类检查:');
+const btn = document.querySelector('.btn-tech-lang');
+if (btn) {
+  console.log('   类列表:', btn.className);
+  console.log('   内部HTML:', btn.innerHTML.substring(0, 100));
+} else {
+  console.log('   ❌ 未找到 .btn-tech-lang 元素');
+}
+
+// 4. 检查科技感样式
+console.log('4️⃣ 科技感样式检查:');
+const nav = document.querySelector('nav');
+if (nav) {
+  const navStyles = window.getComputedStyle(nav);
+  console.log('   导航栏背景:', navStyles.backgroundColor);
+  console.log('   导航栏边框:', navStyles.borderBottom);
+}
+
+const cards = document.querySelectorAll('.tool-card');
+if (cards.length > 0) {
+  const cardStyles = window.getComputedStyle(cards[0]);
+  console.log('   工具卡片背景:', cardStyles.background);
+  console.log('   工具卡片边框:', cardStyles.border);
+}
+
+console.log('%c✅ 检查完成！', 'color: #0f0; font-size: 16px; font-weight: bold;');
+console.log('如果所有项目都显示 ✅，说明修复成功！');
+    </pre>
+  </div>
+
+  <hr style="border-color: #0f0; margin: 30px 0;">
+
+  <div class="result">
+    <h3>强制显示语言切换按钮（临时修复）：</h3>
+    <pre style="background: #000; padding: 10px; overflow-x: auto;">
+// 如果按钮存在但不可见，使用此代码强制显示
+
+const forceShow = () => {
+  const containers = ['language-switcher-desktop', 'language-switcher-mobile'];
+  
+  containers.forEach(id => {
+    const container = document.getElementById(id);
+    if (!container) {
+      console.log(`❌ ${id} 容器未找到`);
+      return;
+    }
+    
+    const button = container.querySelector('button');
+    if (!button) {
+      console.log(`❌ ${id} 中的按钮未找到`);
+      return;
+    }
+    
+    // 强制设置样式
+    button.style.display = 'flex !important';
+    button.style.visibility = 'visible !important';
+    button.style.opacity = '1 !important';
+    button.style.zIndex = '1000';
+    button.style.position = 'relative';
+    button.style.background = 'rgba(15, 23, 42, 0.9)';
+    button.style.border = '2px solid #06b6d4';
+    button.style.color = '#06b6d4';
+    button.style.padding = '0.5rem 0.75rem';
+    button.style.borderRadius = '0.5rem';
+    button.style.boxShadow = '0 0 15px rgba(6, 182, 212, 0.5)';
+    button.style.fontWeight = '600';
+    
+    console.log(`✅ ${id} 按钮已强制显示`);
+  });
+  
+  console.log('✅ 完成！请检查导航栏右侧');
+};
+
+forceShow();
+    </pre>
+  </div>
+
+  <hr style="border-color: #0f0; margin: 30px 0;">
+
+  <h2>💡 提示</h2>
+  <ul>
+    <li>✅ 项目已重新构建</li>
+    <li>✅ CSS已更新，包含语言切换按钮的专门样式</li>
+    <li>⚠️ 请使用 <strong>Ctrl+Shift+R</strong> 强制刷新以查看最新样式</li>
+    <li>⚠️ 如果使用开发服务器，可能需要重启：<code>npm run dev</code></li>
+  </ul>
+
+  <hr style="border-color: #0f0; margin: 30px 0;">
+
+  <h2>📋 快速操作指南</h2>
+  <ol>
+    <li>访问 <code>http://localhost:5173/</code></li>
+    <li>按 <code>Ctrl+Shift+R</code> 强制刷新</li>
+    <li>按 <code>F12</code> 打开开发者工具</li>
+    <li>切换到 <code>Console</code> 标签</li>
+    <li>复制粘贴上面的"验证代码"</li>
+    <li>查看输出结果</li>
+  </ol>
+
+  <p class="info">如果验证脚本显示按钮存在但不可见，使用"强制显示"代码。</p>
+</body>
+</html>
+

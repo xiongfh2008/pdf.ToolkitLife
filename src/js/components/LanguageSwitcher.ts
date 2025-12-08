@@ -45,7 +45,7 @@ export class LanguageSwitcher {
       <div class="language-switcher relative">
         <button 
           id="language-button" 
-          class="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white transition-colors"
+          class="btn-tech-lang flex items-center gap-2 px-3 py-2 rounded-lg text-white transition-colors"
           aria-label="Select Language"
         >
           <i data-lucide="globe" class="w-4 h-4"></i>
@@ -55,20 +55,20 @@ export class LanguageSwitcher {
         
         <div 
           id="language-dropdown" 
-          class="hidden absolute right-0 mt-2 w-64 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto"
+          class="hidden absolute right-0 mt-2 w-64 bg-gray-900 border border-gray-700 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto"
         >
           <div class="p-2">
             <input 
               type="text" 
               id="language-search" 
               placeholder="Search languages..." 
-              class="w-full px-3 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm"
+              class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none text-sm"
             />
           </div>
           <div class="py-1" id="language-list">
             ${languages.map(lang => `
               <button
-                class="language-option w-full text-left px-4 py-2 hover:bg-gray-700 transition-colors flex items-center justify-between ${lang.code === currentLang ? 'bg-gray-700 text-indigo-400' : 'text-gray-300'}"
+                class="language-option w-full text-left px-4 py-2 hover:bg-gray-700 transition-colors flex items-center justify-between ${lang.code === currentLang ? 'bg-gray-800 text-indigo-400' : 'text-gray-300'}"
                 data-lang="${lang.code}"
               >
                 <span>${lang.nativeName}</span>
