@@ -13,6 +13,15 @@ export const translations: Record<string, Record<string, string>> = {
     // SEO
     'meta.description': 'PDFToolkit is a powerful, privacy-first PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing.',
     'meta.keywords': 'pdf tools, privacy, merge pdf, split pdf, edit pdf, convert pdf, client-side pdf, secure pdf',
+    'meta.about.title': 'About PDFToolkit - Fast, Private, and Free PDF Tools',
+    'meta.about.description': 'Learn about PDFToolkit\'s mission to provide fast, private, and free PDF tools. All processing happens locally in your browser - your files never leave your device.',
+    'meta.about.keywords': 'about pdftoolkit, privacy-first pdf tools, free pdf tools, client-side pdf processing, secure document tools',
+    'meta.contact.title': 'Contact Us - PDFToolkit',
+    'meta.contact.description': 'Get in touch with the PDFToolkit team. We\'d love to hear your feedback, suggestions, or answer any questions you may have.',
+    'meta.contact.keywords': 'contact pdftoolkit, support, feedback, pdf tools help, customer service',
+    'meta.faq.title': 'Frequently Asked Questions - PDFToolkit',
+    'meta.faq.description': 'Find answers to common questions about PDFToolkit, our privacy practices, file size limits, and how our tools work.',
+    'meta.faq.keywords': 'pdftoolkit faq, pdf tools questions, privacy questions, how to use pdf tools, pdf help',
     
     // Navigation
     'nav.home': 'Home',
@@ -307,6 +316,15 @@ export const translations: Record<string, Record<string, string>> = {
     // SEO
     'meta.description': 'PDF工具箱是一个强大的、隐私优先的PDF工具包，允许您直接在浏览器中操作、编辑、合并和处理PDF文件。无需服务器端处理，确保您的文件安全私密。',
     'meta.keywords': 'pdf工具, 隐私保护, 合并pdf, 拆分pdf, 编辑pdf, 转换pdf, 客户端pdf, 安全pdf, 在线pdf工具',
+    'meta.about.title': '关于PDF工具箱 - 快速、隐私、免费的PDF工具',
+    'meta.about.description': '了解PDF工具箱提供快速、隐私、免费PDF工具的使命。所有处理都在您的浏览器本地进行 - 您的文件永不离开设备。',
+    'meta.about.keywords': '关于pdf工具箱, 隐私优先pdf工具, 免费pdf工具, 客户端pdf处理, 安全文档工具',
+    'meta.contact.title': '联系我们 - PDF工具箱',
+    'meta.contact.description': '与PDF工具箱团队联系。我们很乐意听取您的反馈、建议或回答您的任何问题。',
+    'meta.contact.keywords': '联系pdf工具箱, 支持, 反馈, pdf工具帮助, 客户服务',
+    'meta.faq.title': '常见问题 - PDF工具箱',
+    'meta.faq.description': '查找关于PDF工具箱、隐私实践、文件大小限制以及工具如何工作的常见问题答案。',
+    'meta.faq.keywords': 'pdf工具箱常见问题, pdf工具问题, 隐私问题, 如何使用pdf工具, pdf帮助',
     
     // Navigation
     'nav.home': '首页',
@@ -601,6 +619,15 @@ export const translations: Record<string, Record<string, string>> = {
     // SEO
     'meta.description': 'PDF工具箱是一個強大的、隱私優先的PDF工具包，允許您直接在瀏覽器中操作、編輯、合併和處理PDF文件。無需伺服器端處理，確保您的文件安全私密。',
     'meta.keywords': 'pdf工具, 隱私保護, 合併pdf, 拆分pdf, 編輯pdf, 轉換pdf, 客戶端pdf, 安全pdf, 線上pdf工具',
+    'meta.about.title': '關於PDF工具箱 - 快速、隱私、免費的PDF工具',
+    'meta.about.description': '了解PDF工具箱提供快速、隱私、免費PDF工具的使命。所有處理都在您的瀏覽器本地進行 - 您的檔案永不離開裝置。',
+    'meta.about.keywords': '關於pdf工具箱, 隱私優先pdf工具, 免費pdf工具, 客戶端pdf處理, 安全文件工具',
+    'meta.contact.title': '聯絡我們 - PDF工具箱',
+    'meta.contact.description': '與PDF工具箱團隊聯絡。我們很樂意聽取您的回饋、建議或回答您的任何問題。',
+    'meta.contact.keywords': '聯絡pdf工具箱, 支援, 回饋, pdf工具幫助, 客戶服務',
+    'meta.faq.title': '常見問題 - PDF工具箱',
+    'meta.faq.description': '查找關於PDF工具箱、隱私實踐、檔案大小限制以及工具如何運作的常見問題答案。',
+    'meta.faq.keywords': 'pdf工具箱常見問題, pdf工具問題, 隱私問題, 如何使用pdf工具, pdf幫助',
     
     // Navigation
     'nav.home': '首頁',
@@ -738,6 +765,15 @@ export const translations: Record<string, Record<string, string>> = {
     // SEO
     'meta.description': 'PDFツールキットは、ブラウザで直接PDFファイルを操作、編集、結合、処理できる強力でプライバシー優先のツールキットです。サーバー側の処理は不要で、ファイルの安全性とプライバシーが保たれます。',
     'meta.keywords': 'pdfツール, プライバシー, pdf結合, pdf分割, pdf編集, pdf変換, クライアントサイドpdf, 安全なpdf',
+    'meta.about.title': 'PDFツールキットについて - 高速、プライベート、無料のPDFツール',
+    'meta.about.description': '高速、プライベート、無料のPDFツールを提供するPDFツールキットの使命について。すべての処理はブラウザ内でローカルに行われます - ファイルはデバイスから離れません。',
+    'meta.about.keywords': 'pdfツールキットについて, プライバシー優先pdfツール, 無料pdfツール, クライアントサイドpdf処理, 安全な文書ツール',
+    'meta.contact.title': 'お問い合わせ - PDFツールキット',
+    'meta.contact.description': 'PDFツールキットチームにお問い合わせください。フィードバック、提案、ご質問などをお待ちしております。',
+    'meta.contact.keywords': 'pdfツールキット お問い合わせ, サポート, フィードバック, pdfツールヘルプ, カスタマーサービス',
+    'meta.faq.title': 'よくある質問 - PDFツールキット',
+    'meta.faq.description': 'PDFツールキット、プライバシー実践、ファイルサイズ制限、ツールの仕組みに関するよくある質問の回答を見つけてください。',
+    'meta.faq.keywords': 'pdfツールキット faq, pdfツール 質問, プライバシー 質問, pdfツールの使い方, pdfヘルプ',
     
     // Navigation
     'nav.home': 'ホーム',
@@ -862,6 +898,15 @@ export const translations: Record<string, Record<string, string>> = {
     // SEO
     'meta.description': 'PDF툴킷은 브라우저에서 직접 PDF 파일을 조작, 편집, 병합 및 처리할 수 있는 강력하고 개인정보 보호를 최우선으로 하는 도구 모음입니다. 서버 측 처리가 필요하지 않아 파일이 안전하고 비공개로 유지됩니다.',
     'meta.keywords': 'pdf 도구, 개인정보 보호, pdf 병합, pdf 분할, pdf 편집, pdf 변환, 클라이언트 측 pdf, 보안 pdf',
+    'meta.about.title': 'PDF툴킷 소개 - 빠르고, 비공개적이며, 무료인 PDF 도구',
+    'meta.about.description': '빠르고, 비공개적이며, 무료인 PDF 도구를 제공하는 PDF툴킷의 사명에 대해 알아보세요. 모든 처리는 브라우저에서 로컬로 이루어집니다 - 파일이 기기를 떠나지 않습니다.',
+    'meta.about.keywords': 'pdf툴킷 소개, 개인정보 보호 우선 pdf 도구, 무료 pdf 도구, 클라이언트 측 pdf 처리, 보안 문서 도구',
+    'meta.contact.title': '문의하기 - PDF툴킷',
+    'meta.contact.description': 'PDF툴킷 팀에 문의하세요. 피드백, 제안 또는 질문이 있으시면 언제든지 연락주세요.',
+    'meta.contact.keywords': 'pdf툴킷 문의, 지원, 피드백, pdf 도구 도움말, 고객 서비스',
+    'meta.faq.title': '자주 묻는 질문 - PDF툴킷',
+    'meta.faq.description': 'PDF툴킷, 개인정보 보호 관행, 파일 크기 제한 및 도구 작동 방식에 대한 일반적인 질문에 대한 답변을 찾아보세요.',
+    'meta.faq.keywords': 'pdf툴킷 faq, pdf 도구 질문, 개인정보 보호 질문, pdf 도구 사용법, pdf 도움말',
     
     // Navigation
     'nav.home': '홈',
@@ -984,6 +1029,15 @@ export const translations: Record<string, Record<string, string>> = {
     // SEO
     'meta.description': 'PDFToolkit es un potente kit de herramientas PDF que prioriza la privacidad y le permite manipular, editar, combinar y procesar archivos PDF directamente en su navegador. Sin procesamiento en el servidor.',
     'meta.keywords': 'herramientas pdf, privacidad, combinar pdf, dividir pdf, editar pdf, convertir pdf, pdf del lado del cliente, pdf seguro',
+    'meta.about.title': 'Acerca de PDFToolkit - Herramientas PDF rápidas, privadas y gratuitas',
+    'meta.about.description': 'Conozca la misión de PDFToolkit de proporcionar herramientas PDF rápidas, privadas y gratuitas. Todo el procesamiento se realiza localmente en su navegador: sus archivos nunca salen de su dispositivo.',
+    'meta.about.keywords': 'acerca de pdftoolkit, herramientas pdf de privacidad primero, herramientas pdf gratuitas, procesamiento pdf del lado del cliente, herramientas de documentos seguros',
+    'meta.contact.title': 'Contáctenos - PDFToolkit',
+    'meta.contact.description': 'Póngase en contacto con el equipo de PDFToolkit. Nos encantaría escuchar sus comentarios, sugerencias o responder cualquier pregunta que pueda tener.',
+    'meta.contact.keywords': 'contacto pdftoolkit, soporte, comentarios, ayuda herramientas pdf, servicio al cliente',
+    'meta.faq.title': 'Preguntas Frecuentes - PDFToolkit',
+    'meta.faq.description': 'Encuentre respuestas a preguntas comunes sobre PDFToolkit, nuestras prácticas de privacidad, límites de tamaño de archivo y cómo funcionan nuestras herramientas.',
+    'meta.faq.keywords': 'pdftoolkit faq, preguntas herramientas pdf, preguntas privacidad, cómo usar herramientas pdf, ayuda pdf',
     
     // Navigation
     'nav.home': 'Inicio',

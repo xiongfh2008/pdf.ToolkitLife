@@ -6,7 +6,6 @@ import * as pdfjsLib from 'pdfjs-dist';
 import Sortable from 'sortablejs';
 import { createIcons, icons } from 'lucide';
 import '../../css/bookmark.css';
-import { initializeGlobalShortcuts } from '../utils/shortcuts-init.js';
 import { truncateFilename, getPDFDocument } from '../utils/helpers.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
@@ -454,8 +453,6 @@ function cancelDestinationPicking() {
 
 // Setup canvas click handler for destination picking
 document.addEventListener('DOMContentLoaded', () => {
-  initializeGlobalShortcuts();
-
   const canvas = document.getElementById('pdf-canvas');
   const canvasWrapper = document.getElementById('pdf-canvas-wrapper');
   const cancelPickingBtn = document.getElementById('cancel-picking-btn');

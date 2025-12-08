@@ -1,6 +1,5 @@
 import JSZip from 'jszip'
 import { downloadFile, formatBytes, readFileAsArrayBuffer } from '../utils/helpers';
-import { initializeGlobalShortcuts } from '../utils/shortcuts-init.js';
 
 const worker = new Worker(import.meta.env.BASE_URL + 'workers/pdf-to-json.worker.js');
 
@@ -151,4 +150,3 @@ if (backToToolsBtn) {
 convertBtn.addEventListener('click', convertPDFsToJSON)
 
 showStatus('Select PDF files to get started', 'info')
-initializeGlobalShortcuts()

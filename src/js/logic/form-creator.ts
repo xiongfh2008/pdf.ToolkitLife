@@ -1,5 +1,4 @@
 import { PDFDocument, StandardFonts, rgb, TextAlignment, PDFName, PDFString, PageSizes, PDFBool, PDFDict, PDFArray, PDFRadioGroup } from 'pdf-lib'
-import { initializeGlobalShortcuts } from '../utils/shortcuts-init.js'
 import { downloadFile, hexToRgb, getPDFDocument } from '../utils/helpers.js'
 import { createIcons, icons } from 'lucide'
 import * as pdfjsLib from 'pdfjs-dist'
@@ -2392,4 +2391,3 @@ if (errorModal) {
     })
 }
 
-initializeGlobalShortcuts()

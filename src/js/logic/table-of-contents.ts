@@ -1,5 +1,4 @@
 import { downloadFile, formatBytes } from "../utils/helpers";
-import { initializeGlobalShortcuts } from "../utils/shortcuts-init.js";
 
 
 const worker = new Worker(import.meta.env.BASE_URL + 'workers/table-of-contents.worker.js');
@@ -205,4 +204,3 @@ if (backToToolsBtn) {
 
 generateBtn.addEventListener('click', generateTableOfContents);
 
-initializeGlobalShortcuts();

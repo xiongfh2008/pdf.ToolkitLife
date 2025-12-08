@@ -1,5 +1,4 @@
 import { formatBytes, readFileAsArrayBuffer } from '../utils/helpers'
-import { initializeGlobalShortcuts } from '../utils/shortcuts-init.js'
 
 let selectedFile: File | null = null
 let viewerIframe: HTMLIFrameElement | null = null
@@ -175,5 +174,3 @@ if (backToToolsBtn) {
     window.location.href = import.meta.env.BASE_URL
   })
 }
-
-initializeGlobalShortcuts()
