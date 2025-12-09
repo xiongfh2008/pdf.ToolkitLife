@@ -1,0 +1,77 @@
+/* Language Switcher - Cyberpunk Theme */
+
+.language-switcher {
+  position: relative;
+  z-index: 100;
+}
+
+.btn-tech-lang {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid #06b6d4 !important;
+  color: #06b6d4 !important;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+  position: relative;
+  z-index: 101;
+}
+
+.btn-tech-lang:hover {
+  background: #06b6d4 !important;
+  color: #000 !important;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-tech-lang [data-lucide="globe"] {
+  stroke: #06b6d4;
+}
+
+.btn-tech-lang:hover [data-lucide="globe"] {
+  stroke: #000;
+}
+
+#language-dropdown {
+  background-color: rgba(15, 23, 42, 0.98) !important;
+  border: 1px solid #06b6d4 !important;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(6, 182, 212, 0.3);
+  z-index: 200;
+}
+
+#language-dropdown.hidden {
+  display: none !important;
+}
+
+.language-option {
+  color: #94a3b8 !important;
+  transition: all 0.2s ease;
+}
+
+.language-option:hover {
+  background-color: rgba(6, 182, 212, 0.2) !important;
+  color: #06b6d4 !important;
+}
+
+.language-option.bg-gray-800,
+.language-option.text-indigo-400 {
+  background-color: rgba(6, 182, 212, 0.15) !important;
+  color: #06b6d4 !important;
+}
+
+#language-search {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid #475569 !important;
+  color: #e2e8f0 !important;
+}
+
+#language-search:focus {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.3) !important;
+  outline: none;
+}
+

@@ -16,7 +16,16 @@ const SUPPORTED_LANGUAGES = [
 
 function detectLanguage(): string {
   try {
-    // Check localStorage first
+    // 1. Check URL parameter first (for SEO and sharing)
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = urlParams.get('lang');
+    if (paramLang && SUPPORTED_LANGUAGES.includes(paramLang)) {
+      // Save preference for future visits
+      localStorage.setItem(STORAGE_KEY, paramLang);
+      return paramLang;
+    }
+
+    // 2. Check localStorage
     const savedLang = localStorage.getItem(STORAGE_KEY);
     if (savedLang && SUPPORTED_LANGUAGES.includes(savedLang)) {
       return savedLang;

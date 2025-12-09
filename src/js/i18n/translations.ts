@@ -11,8 +11,9 @@ export const translations: Record<string, Record<string, string>> = {
     'app.tagline': 'The Privacy First PDF Toolkit',
     
     // SEO
-    'meta.description': 'PDFToolkit is a powerful, privacy-first PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing.',
-    'meta.keywords': 'pdf tools, privacy, merge pdf, split pdf, edit pdf, convert pdf, client-side pdf, secure pdf',
+    'meta.home.title': 'PDFToolkit - Free PDF Editor & Converter (Privacy First)',
+    'meta.description': 'Free PDF Editor and Converter. Edit PDF, PDF to Word, JPG to PDF, Word to PDF, Merge, Split and more. 100% privacy-first, client-side processing. No uploads, no signups.',
+    'meta.keywords': 'pdf editor, edit pdf, free pdf editor, pdf editor free, pdf to word, jpg to pdf, word to pdf, editar pdf, online pdf editor, pdf tools, merge pdf, split pdf, convert pdf, client-side pdf, secure pdf',
     'meta.about.title': 'About PDFToolkit - Fast, Private, and Free PDF Tools',
     'meta.about.description': 'Learn about PDFToolkit\'s mission to provide fast, private, and free PDF tools. All processing happens locally in your browser - your files never leave your device.',
     'meta.about.keywords': 'about pdftoolkit, privacy-first pdf tools, free pdf tools, client-side pdf processing, secure document tools',
@@ -320,8 +321,9 @@ export const translations: Record<string, Record<string, string>> = {
     'app.tagline': '隐私优先的PDF工具包',
     
     // SEO
-    'meta.description': 'PDF工具箱是一个强大的、隐私优先的PDF工具包，允许您直接在浏览器中操作、编辑、合并和处理PDF文件。无需服务器端处理，确保您的文件安全私密。',
-    'meta.keywords': 'pdf工具, 隐私保护, 合并pdf, 拆分pdf, 编辑pdf, 转换pdf, 客户端pdf, 安全pdf, 在线pdf工具',
+    'meta.home.title': 'PDF工具箱 - 免费PDF编辑器 & 转换器 (隐私优先)',
+    'meta.description': '免费PDF编辑器和转换器。编辑PDF、PDF转Word、JPG转PDF、Word转PDF、合并、拆分等。100%隐私优先，浏览器本地处理。无需上传，无需注册。',
+    'meta.keywords': 'pdf编辑器, 编辑pdf, 免费pdf编辑器, pdf转word, jpg转pdf, word转pdf, pdf editor, edit pdf, free pdf editor, pdf editor free, pdf to word, jpg to pdf, word to pdf, editar pdf, pdf工具, 合并pdf, 拆分pdf, 转换pdf, 客户端pdf, 安全pdf',
     'meta.about.title': '关于PDF工具箱 - 快速、隐私、免费的PDF工具',
     'meta.about.description': '了解PDF工具箱提供快速、隐私、免费PDF工具的使命。所有处理都在您的浏览器本地进行 - 您的文件永不离开设备。',
     'meta.about.keywords': '关于pdf工具箱, 隐私优先pdf工具, 免费pdf工具, 客户端pdf处理, 安全文档工具',
@@ -629,8 +631,9 @@ export const translations: Record<string, Record<string, string>> = {
     'app.tagline': '隱私優先的PDF工具包',
     
     // SEO
-    'meta.description': 'PDF工具箱是一個強大的、隱私優先的PDF工具包，允許您直接在瀏覽器中操作、編輯、合併和處理PDF文件。無需伺服器端處理，確保您的文件安全私密。',
-    'meta.keywords': 'pdf工具, 隱私保護, 合併pdf, 拆分pdf, 編輯pdf, 轉換pdf, 客戶端pdf, 安全pdf, 線上pdf工具',
+    'meta.home.title': 'PDF工具箱 - 免費PDF編輯器 & 轉換器 (隱私優先)',
+    'meta.description': '免費PDF編輯器和轉換器。編輯PDF、PDF轉Word、JPG轉PDF、Word轉PDF、合併、拆分等。100%隱私優先，瀏覽器本地處理。無需上傳，無需註冊。',
+    'meta.keywords': 'pdf編輯器, 編輯pdf, 免費pdf編輯器, pdf轉word, jpg轉pdf, word轉pdf, pdf editor, edit pdf, free pdf editor, pdf editor free, pdf to word, jpg to pdf, word to pdf, editar pdf, pdf工具, 合併pdf, 拆分pdf, 轉換pdf, 客戶端pdf, 安全pdf',
     'meta.about.title': '關於PDF工具箱 - 快速、隱私、免費的PDF工具',
     'meta.about.description': '了解PDF工具箱提供快速、隱私、免費PDF工具的使命。所有處理都在您的瀏覽器本地進行 - 您的檔案永不離開裝置。',
     'meta.about.keywords': '關於pdf工具箱, 隱私優先pdf工具, 免費pdf工具, 客戶端pdf處理, 安全文件工具',
@@ -781,8 +784,9 @@ export const translations: Record<string, Record<string, string>> = {
     'app.tagline': 'プライバシー優先のPDFツールキット',
     
     // SEO
-    'meta.description': 'PDFツールキットは、ブラウザで直接PDFファイルを操作、編集、結合、処理できる強力でプライバシー優先のツールキットです。サーバー側の処理は不要で、ファイルの安全性とプライバシーが保たれます。',
-    'meta.keywords': 'pdfツール, プライバシー, pdf結合, pdf分割, pdf編集, pdf変換, クライアントサイドpdf, 安全なpdf',
+    'meta.home.title': 'PDFツールキット - 無料PDFエディタ & コンバータ',
+    'meta.description': '無料のPDFエディタ＆コンバータ。PDF編集、結合、分割、PDF Word 変換、JPG PDF 変換など。プライバシー優先、100%クライアント側処理。アップロード不要、登録不要。',
+    'meta.keywords': 'pdfエディタ, pdf編集, 無料pdfエディタ, pdf word 変換, jpg pdf 変換, word pdf 変換, pdf editor, edit pdf, free pdf editor, pdf to word, jpg to pdf, word to pdf, pdfツール, pdf結合, pdf分割, pdf変換, 安全なpdf',
     'meta.about.title': 'PDFツールキットについて - 高速、プライベート、無料のPDFツール',
     'meta.about.description': '高速、プライベート、無料のPDFツールを提供するPDFツールキットの使命について。すべての処理はブラウザ内でローカルに行われます - ファイルはデバイスから離れません。',
     'meta.about.keywords': 'pdfツールキットについて, プライバシー優先pdfツール, 無料pdfツール, クライアントサイドpdf処理, 安全な文書ツール',
@@ -920,8 +924,9 @@ export const translations: Record<string, Record<string, string>> = {
     'app.tagline': '개인정보 보호 우선 PDF 툴킷',
     
     // SEO
+    'meta.home.title': 'PDF툴킷 - 무료 PDF 편집기 및 변환기',
     'meta.description': 'PDF툴킷은 브라우저에서 직접 PDF 파일을 조작, 편집, 병합 및 처리할 수 있는 강력하고 개인정보 보호를 최우선으로 하는 도구 모음입니다. 서버 측 처리가 필요하지 않아 파일이 안전하고 비공개로 유지됩니다.',
-    'meta.keywords': 'pdf 도구, 개인정보 보호, pdf 병합, pdf 분할, pdf 편집, pdf 변환, 클라이언트 측 pdf, 보안 pdf',
+    'meta.keywords': 'pdf 도구, 개인정보 보호, pdf 병합, pdf 분할, pdf 편집, pdf 변환, 클라이언트 측 pdf, 보안 pdf, 무료 pdf 편집기, pdf word 변환, jpg pdf 변환, word pdf 변환, pdf editor, edit pdf, free pdf editor, pdf to word, jpg to pdf, word to pdf',
     'meta.about.title': 'PDF툴킷 소개 - 빠르고, 비공개적이며, 무료인 PDF 도구',
     'meta.about.description': '빠르고, 비공개적이며, 무료인 PDF 도구를 제공하는 PDF툴킷의 사명에 대해 알아보세요. 모든 처리는 브라우저에서 로컬로 이루어집니다 - 파일이 기기를 떠나지 않습니다.',
     'meta.about.keywords': 'pdf툴킷 소개, 개인정보 보호 우선 pdf 도구, 무료 pdf 도구, 클라이언트 측 pdf 처리, 보안 문서 도구',
@@ -1057,8 +1062,9 @@ export const translations: Record<string, Record<string, string>> = {
     'app.tagline': 'Kit de herramientas PDF con privacidad primero',
     
     // SEO
-    'meta.description': 'PDFToolkit es un potente kit de herramientas PDF que prioriza la privacidad y le permite manipular, editar, combinar y procesar archivos PDF directamente en su navegador. Sin procesamiento en el servidor.',
-    'meta.keywords': 'herramientas pdf, privacidad, combinar pdf, dividir pdf, editar pdf, convertir pdf, pdf del lado del cliente, pdf seguro',
+    'meta.home.title': 'PDFToolkit - Editor de PDF Gratuito y Conversor',
+    'meta.description': 'Editor de PDF gratuito y conversor. Editar PDF, PDF a Word, JPG a PDF, Word a PDF y más. Privacidad primero, procesamiento 100% en el cliente. Sin subidas, sin registro.',
+    'meta.keywords': 'editor pdf, editar pdf, editor pdf gratis, pdf editor free, free pdf editor, pdf a word, jpg a pdf, word a pdf, herramientas pdf, combinar pdf, dividir pdf, convertir pdf, pdf seguro, online pdf editor, pdf to word, jpg to pdf, word to pdf, client-side pdf',
     'meta.about.title': 'Acerca de PDFToolkit - Herramientas PDF rápidas, privadas y gratuitas',
     'meta.about.description': 'Conozca la misión de PDFToolkit de proporcionar herramientas PDF rápidas, privadas y gratuitas. Todo el procesamiento se realiza localmente en su navegador: sus archivos nunca salen de su dispositivo.',
     'meta.about.keywords': 'acerca de pdftoolkit, herramientas pdf de privacidad primero, herramientas pdf gratuitas, procesamiento pdf del lado del cliente, herramientas de documentos seguros',

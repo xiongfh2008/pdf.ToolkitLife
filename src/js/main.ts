@@ -8,6 +8,7 @@ import '../css/styles.css';
 import { formatStars } from './utils/helpers.js';
 import { APP_VERSION, injectVersion } from '../version.js';
 import { i18n } from './i18n/index.js';
+import { LanguageSwitcher } from './components/LanguageSwitcher.js';
 
 const init = () => {
   pdfjsLib.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
@@ -302,6 +303,10 @@ const init = () => {
 
   createIcons({ icons });
   console.log('Welcome to PDFToolkit - Your Privacy First PDF Solution!');
+
+  // Initialize Language Switchers
+  new LanguageSwitcher('language-switcher-desktop');
+  new LanguageSwitcher('language-switcher-mobile');
 
   // Ensure all modals are hidden on initialization (防止意外弹出)
   if (dom.alertModal) {

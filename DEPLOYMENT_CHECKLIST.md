@@ -1,282 +1,167 @@
-# 部署检查清单 - 设置弹窗优化
+# 部署检查清单 (Deployment Checklist)
+
+## ✅ 已完成的修复
+
+### 1. SEO 优化 (最新)
+- **关键词更新**: 将以下高频关键词整合到首页和多语言配置中：
+  - `pdf editor`, `edit pdf`
+  - `editar pdf` (西班牙语)
+  - `free pdf editor`, `pdf editor free`
+  - `pdf to word`, `word to pdf`
+  - `jpg to pdf`
+- **影响范围**: 更新了 `index.html` (默认) 和 `src/js/i18n/translations.ts` (en, es, zh-CN, zh-TW)。
+- **目的**: 提高搜索引擎排名，覆盖核心搜索意图。
+
+### 2. 语言切换按钮修复
+- **问题**: 语言切换按钮在部署后不可见
+- **原因**: LanguageSwitcher组件有独立的CSS文件，但样式没有正确打包
+- **解决方案**:
+  - 创建了 `src/css/language-switcher.css` 专用样式文件
+  - 在 `LanguageSwitcher.ts` 中导入该CSS文件
+  - 添加了赛博朋克主题的按钮样式（霓虹蓝边框和发光效果）
+  - 修复了 `.hidden` 类的优先级问题
+
+### 3. 赛博朋克主题应用
+- **特性**:
+  - 深色背景带网格图案
+  - 霓虹蓝（#06b6d4）和紫色（#8b5cf6）强调色
+  - 玻璃态效果（glassmorphism）
+  - 悬停时的发光效果
+  - 渐变按钮和边框
+  - 科技感十足的视觉效果
+
+### 4. 构建配置优化
+- 创建了 `netlify.toml` 配置文件
+- 设置了正确的构建命令和发布目录
+- 配置了静态资源缓存策略
+- 添加了SPA路由重定向规则
+
+### 6. 站点地图与爬虫协议
+- **新增文件**:
+  - `public/sitemap.xml`: 列出了首页和关键页面 (about, contact, faq, privacy, terms)
+  - `public/robots.txt`: 允许爬虫抓取并指向 sitemap
+- **域名**: 已配置为 `https://pdf.voguegale.com`
+
+### 7. GEO 优化 (地理定位)
+- **Hreflang标签**: 在 `index.html` 中为所有31种支持语言添加了 `<link rel="alternate" hreflang="..." />` 标签，帮助搜索引擎针对不同地区用户展示对应语言版本。
+- **Canonical标签**: 添加了规范链接标签，并在切换语言时动态更新。
+- **Open Graph**: 添加了 `og:locale`, `og:url` 等社交媒体分享标签，支持多语言适配。
 
 ## 📋 部署前检查
 
-### 代码修改
-- [x] `src/js/main.ts` 已修改
-- [x] 添加初始化隐藏逻辑
-- [x] 添加 URL hash 支持
-- [x] 添加 ESC 键关闭功能
-- [x] 添加 URL 状态同步
+### 本地测试
+- [x] 运行 `npm run build` 确保无错误
+- [x] 检查 `dist` 目录生成正确
+- [x] 验证 `index.html` 包含 hreflang 标签列表
+- [x] 验证语言切换时 Canonical 和 OG 标签是否动态更新
+- [x] 验证 `dist/sitemap.xml` 和 `dist/robots.txt` 是否存在
+- [x] 本地预览 `npm run dev` 测试功能
+- [x] 语言切换功能正常
+- [x] 主题样式正确显示
 
-### 构建验证
-- [x] TypeScript 编译成功
-- [x] Vite 构建完成
-- [x] 无 Linter 错误
-- [x] `dist/` 目录已更新
-- [x] 构建文件包含修改
+### Netlify部署步骤
 
-### 文档准备
-- [x] `SETTINGS_MODAL_FIX.md` - 技术说明
-- [x] `TEST_SETTINGS_MODAL.md` - 测试指南
-- [x] `设置弹窗优化完成.md` - 完整总结
-- [x] `QUICK_FIX_SUMMARY.txt` - 快速参考
-- [x] `DEPLOYMENT_CHECKLIST.md` - 本清单
+1. **推送代码到Git仓库**
+   ```bash
+   git add .
+   git commit -m "SEO optimization: Add keywords (pdf editor, edit pdf, editar pdf, etc.)"
+   git push
+   ```
 
-## 🚀 部署步骤
+2. **Netlify自动部署**
+   - Netlify会自动检测到 `netlify.toml`
+   - 执行 `npm run build`
+   - 发布 `dist` 目录
 
-### 选项 1: Git 自动部署（推荐）
+3. **部署后验证**
+   - [ ] 访问部署的网站
+   - [ ] 查看页面源代码，确认 `<meta name="keywords">` 包含新关键词
+   - [ ] 检查语言切换按钮是否可见
+   - [ ] 测试语言切换功能
+   - [ ] 检查赛博朋克主题是否正确显示
 
+## 🎨 主题特色
+
+### 颜色方案
+- **背景**: `#030712` (深空黑)
+- **主色**: `#06b6d4` (霓虹蓝)
+- **次色**: `#8b5cf6` (紫罗兰)
+- **强调色**: `#ec4899` (粉红)
+
+### 视觉效果
+- 网格背景图案
+- 玻璃态卡片
+- 霓虹发光边框
+- 渐变按钮
+- 悬停动画效果
+
+## 🔧 技术细节
+
+### 文件结构
+```
+src/
+├── css/
+│   ├── styles.css              # 主题样式
+│   └── language-switcher.css   # 语言切换器样式
+├── js/
+│   ├── components/
+│   │   └── LanguageSwitcher.ts # 语言切换组件
+│   └── main.ts                 # 主入口
+└── ...
+
+dist/                           # 构建输出
+├── assets/
+│   ├── index-*.css            # 主样式（已压缩）
+│   ├── LanguageSwitcher-*.css # 语言切换器样式（已压缩）
+│   └── *.js                   # JavaScript文件（已压缩）
+└── index.html                 # 主页面
+
+netlify.toml                   # Netlify配置
+```
+
+### 构建输出验证
 ```bash
-# 1. 查看修改
-git status
+# 检查构建文件
+ls dist/assets/LanguageSwitcher-*.css
+ls dist/assets/index-*.css
 
-# 2. 添加所有修改
-git add .
-
-# 3. 提交修改
-git commit -m "fix: 优化设置弹窗，防止意外弹出
-
-- 添加初始化强制隐藏机制
-- 支持 #settings URL hash
-- 添加 ESC 键快速关闭
-- URL 状态与弹窗同步
-- 防止意外触发的多层防护"
-
-# 4. 推送到远程仓库
-git push origin main
-
-# 5. 等待 Netlify 自动部署
-# 访问 Netlify Dashboard 查看部署状态
+# 验证CSS包含正确的样式
+grep -i "btn-tech-lang" dist/assets/LanguageSwitcher-*.css
 ```
 
-### 选项 2: Netlify CLI 手动部署
+## 🐛 已知问题（已修复）
 
-```bash
-# 1. 安装 Netlify CLI（如果未安装）
-npm install -g netlify-cli
+1. ~~语言切换按钮不可见~~ ✅
+2. ~~下拉菜单不显示~~ ✅
+3. ~~主题样式未应用~~ ✅
+4. ~~构建错误（page-lang-init.ts）~~ ✅
 
-# 2. 登录 Netlify
-netlify login
+## 📱 浏览器兼容性
 
-# 3. 部署到生产环境
-netlify deploy --prod --dir=dist
+- ✅ Chrome/Edge (最新版)
+- ✅ Firefox (最新版)
+- ✅ Safari (最新版)
+- ✅ 移动端浏览器
 
-# 4. 确认部署
-# CLI 会显示部署 URL
-```
+## 🚀 性能优化
 
-### 选项 3: Netlify 网页界面拖拽
+- CSS和JS文件已压缩
+- 使用了Vite的代码分割
+- 静态资源设置了长期缓存
+- 懒加载优化
 
-1. 登录 [Netlify Dashboard](https://app.netlify.com/)
-2. 进入你的项目
-3. 点击 "Deploys" 标签
-4. 将 `dist` 文件夹拖拽到 "Need to update your site? Drag and drop your site output folder here" 区域
-5. 等待部署完成
+## 📞 问题排查
 
-## ✅ 部署后验证
+如果部署后仍有问题：
 
-### 关键测试（必须通过）
+1. **清除浏览器缓存**: Ctrl+Shift+R (Windows) 或 Cmd+Shift+R (Mac)
+2. **检查Netlify构建日志**: 查看是否有构建错误
+3. **验证文件路径**: 确保所有资源路径正确
+4. **检查控制台**: F12打开开发者工具查看错误信息
 
-#### 1. 首次访问测试 🔴 最重要
-```
-访问: https://your-site.netlify.app/
-预期: 设置弹窗不显示
-状态: [ ] 通过
-```
+## 🎯 下一步
 
-#### 2. 点击打开测试
-```
-操作: 点击设置按钮（齿轮图标）
-预期: 弹窗打开，URL 变为 /#settings
-状态: [ ] 通过
-```
-
-#### 3. 关闭功能测试
-```
-测试 A: 点击 X 按钮关闭
-预期: 弹窗关闭，URL 恢复为 /
-状态: [ ] 通过
-
-测试 B: 点击外部区域关闭
-预期: 弹窗关闭，URL 恢复为 /
-状态: [ ] 通过
-
-测试 C: 按 ESC 键关闭
-预期: 弹窗关闭，URL 恢复为 /
-状态: [ ] 通过
-```
-
-#### 4. URL Hash 测试
-```
-访问: https://your-site.netlify.app/#settings
-预期: 页面加载后自动打开设置弹窗
-状态: [ ] 通过
-```
-
-#### 5. 浏览器导航测试
-```
-操作: 打开弹窗 → 关闭弹窗 → 点击浏览器后退按钮
-预期: 弹窗重新打开
-状态: [ ] 通过
-
-操作: 点击浏览器前进按钮
-预期: 弹窗关闭
-状态: [ ] 通过
-```
-
-#### 6. 刷新保持测试
-```
-操作: 打开弹窗（URL 为 /#settings）→ 刷新页面
-预期: 弹窗保持打开状态
-状态: [ ] 通过
-```
-
-### 浏览器兼容性测试
-
-#### 桌面浏览器
-```
-Chrome/Edge:  [ ] 通过
-Firefox:      [ ] 通过
-Safari:       [ ] 通过
-```
-
-#### 移动浏览器
-```
-iOS Safari:   [ ] 通过
-Android Chrome: [ ] 通过
-```
-
-### 功能完整性测试
-
-```
-设置功能:
-  [ ] 快捷键设置正常
-  [ ] 偏好设置正常
-  [ ] 搜索功能正常
-  [ ] 导入设置正常
-  [ ] 导出设置正常
-  [ ] 重置为默认正常
-  [ ] 自动保存正常
-```
-
-## 🐛 故障排查
-
-### 如果设置弹窗仍然意外弹出
-
-#### 步骤 1: 清除缓存
-```
-Chrome/Edge: Ctrl+Shift+Delete
-Firefox: Ctrl+Shift+Delete
-Safari: Cmd+Option+E
-```
-选择：
-- [x] 缓存的图片和文件
-- [x] Cookie 和其他网站数据
-时间范围: 全部时间
-
-#### 步骤 2: 清除 localStorage
-1. 打开开发者工具（F12）
-2. 进入 Application/Storage 标签
-3. 展开 Local Storage
-4. 右键点击你的网站
-5. 选择 "Clear"
-
-#### 步骤 3: 检查 URL
-```
-正确: https://your-site.netlify.app/
-错误: https://your-site.netlify.app/#settings
-```
-
-#### 步骤 4: 验证部署
-1. 访问 Netlify Dashboard
-2. 检查最新部署的时间戳
-3. 确认是最新的提交
-4. 查看部署日志是否有错误
-
-#### 步骤 5: 强制重新部署
-```bash
-# 清除构建缓存
-rm -rf dist node_modules/.vite
-
-# 重新安装依赖
-npm install
-
-# 重新构建
-npm run build
-
-# 重新部署
-git add .
-git commit -m "chore: 强制重新部署"
-git push origin main
-```
-
-#### 步骤 6: 检查浏览器控制台
-1. 打开开发者工具（F12）
-2. 进入 Console 标签
-3. 查找错误或警告信息
-4. 截图并记录
-
-## 📊 性能检查
-
-### 构建大小
-```bash
-# 检查构建文件大小
-ls -lh dist/assets/
-
-# 主要文件应该在合理范围内
-main-*.js: < 500KB
-ui-*.js: < 200KB
-```
-
-### 加载时间
-```
-首次加载: < 3秒
-后续加载: < 1秒
-```
-
-## 📝 部署记录
-
-```
-部署日期: _______________
-部署人员: _______________
-Git Commit: _______________
-Netlify URL: _______________
-
-测试结果:
-  首次访问测试: [ ] 通过 [ ] 失败
-  功能测试: [ ] 通过 [ ] 失败
-  浏览器兼容性: [ ] 通过 [ ] 失败
-
-备注:
-_________________________________
-_________________________________
-_________________________________
-```
-
-## 🎉 部署成功标准
-
-所有以下条件必须满足：
-
-- [x] 代码已推送到 Git 仓库
-- [ ] Netlify 部署成功（绿色状态）
-- [ ] 首次访问测试通过（最关键）
-- [ ] 所有关键测试通过
-- [ ] 至少 2 个浏览器测试通过
-- [ ] 设置功能完整可用
-- [ ] 无控制台错误
-
-## 📞 支持联系
-
-如果遇到问题：
-1. 查看 `TEST_SETTINGS_MODAL.md` 详细测试指南
-2. 查看 `SETTINGS_MODAL_FIX.md` 技术细节
-3. 检查浏览器控制台错误信息
-4. 查看 Netlify 部署日志
-
----
-
-**创建时间**: 2025-12-08  
-**版本**: 1.0  
-**状态**: 准备部署
-
+- [ ] 部署到Netlify
+- [ ] 验证所有功能
+- [ ] 进行用户测试
+- [ ] 收集反馈并优化

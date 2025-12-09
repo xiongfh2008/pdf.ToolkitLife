@@ -8,9 +8,59 @@
   <!-- Early language detection (runs before any rendering) -->
   <script type="module" src="/src/js/utils/early-lang-detection.ts"></script>
   
-  <title>PDFToolkit - The Privacy First PDF Toolkit</title>
-  <meta name="description" content="PDFToolkit is a powerful, privacy-first PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing." />
-  <meta name="keywords" content="pdf tools, privacy, merge pdf, split pdf, edit pdf, convert pdf, client-side pdf, secure pdf" />
+  <!-- Hreflang Tags for GEO Optimization -->
+  <link rel="alternate" hreflang="x-default" href="https://pdf.voguegale.com/" />
+  <link rel="alternate" hreflang="en" href="https://pdf.voguegale.com/?lang=en" />
+  <link rel="alternate" hreflang="zh-CN" href="https://pdf.voguegale.com/?lang=zh-CN" />
+  <link rel="alternate" hreflang="zh-TW" href="https://pdf.voguegale.com/?lang=zh-TW" />
+  <link rel="alternate" hreflang="es" href="https://pdf.voguegale.com/?lang=es" />
+  <link rel="alternate" hreflang="fr" href="https://pdf.voguegale.com/?lang=fr" />
+  <link rel="alternate" hreflang="de" href="https://pdf.voguegale.com/?lang=de" />
+  <link rel="alternate" hreflang="ja" href="https://pdf.voguegale.com/?lang=ja" />
+  <link rel="alternate" hreflang="ko" href="https://pdf.voguegale.com/?lang=ko" />
+  <link rel="alternate" hreflang="ar" href="https://pdf.voguegale.com/?lang=ar" />
+  <link rel="alternate" hreflang="pt" href="https://pdf.voguegale.com/?lang=pt" />
+  <link rel="alternate" hreflang="ru" href="https://pdf.voguegale.com/?lang=ru" />
+  <link rel="alternate" hreflang="it" href="https://pdf.voguegale.com/?lang=it" />
+  <link rel="alternate" hreflang="nl" href="https://pdf.voguegale.com/?lang=nl" />
+  <link rel="alternate" hreflang="pl" href="https://pdf.voguegale.com/?lang=pl" />
+  <link rel="alternate" hreflang="tr" href="https://pdf.voguegale.com/?lang=tr" />
+  <link rel="alternate" hreflang="vi" href="https://pdf.voguegale.com/?lang=vi" />
+  <link rel="alternate" hreflang="th" href="https://pdf.voguegale.com/?lang=th" />
+  <link rel="alternate" hreflang="id" href="https://pdf.voguegale.com/?lang=id" />
+  <link rel="alternate" hreflang="ms" href="https://pdf.voguegale.com/?lang=ms" />
+  <link rel="alternate" hreflang="hi" href="https://pdf.voguegale.com/?lang=hi" />
+  <link rel="alternate" hreflang="bn" href="https://pdf.voguegale.com/?lang=bn" />
+  <link rel="alternate" hreflang="ur" href="https://pdf.voguegale.com/?lang=ur" />
+  <link rel="alternate" hreflang="fa" href="https://pdf.voguegale.com/?lang=fa" />
+  <link rel="alternate" hreflang="he" href="https://pdf.voguegale.com/?lang=he" />
+  <link rel="alternate" hreflang="sv" href="https://pdf.voguegale.com/?lang=sv" />
+  <link rel="alternate" hreflang="da" href="https://pdf.voguegale.com/?lang=da" />
+  <link rel="alternate" hreflang="fi" href="https://pdf.voguegale.com/?lang=fi" />
+  <link rel="alternate" hreflang="no" href="https://pdf.voguegale.com/?lang=no" />
+  <link rel="alternate" hreflang="cs" href="https://pdf.voguegale.com/?lang=cs" />
+  <link rel="alternate" hreflang="el" href="https://pdf.voguegale.com/?lang=el" />
+  <link rel="alternate" hreflang="ro" href="https://pdf.voguegale.com/?lang=ro" />
+  <link rel="alternate" hreflang="mr" href="https://pdf.voguegale.com/?lang=mr" />
+  <link rel="alternate" hreflang="ta" href="https://pdf.voguegale.com/?lang=ta" />
+  <link rel="alternate" hreflang="te" href="https://pdf.voguegale.com/?lang=te" />
+  <link rel="alternate" hreflang="ne" href="https://pdf.voguegale.com/?lang=ne" />
+
+  <!-- Canonical Tag -->
+  <link rel="canonical" href="https://pdf.voguegale.com/" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pdf.voguegale.com/" />
+  <meta property="og:title" content="PDFToolkit - Free PDF Editor & Converter" />
+  <meta property="og:description" content="Free, privacy-first PDF tools. Edit, merge, split, and convert PDFs directly in your browser." />
+  <meta property="og:image" content="https://pdf.voguegale.com/images/og-image.png" />
+  <meta property="og:locale" content="en_US" />
+
+  
+  <title data-i18n-title="meta.home.title">PDFToolkit - Free PDF Editor & Converter (Privacy First)</title>
+  <meta name="description" content="Free PDF Editor and Converter. Edit PDF, PDF to Word, JPG to PDF, Word to PDF, Merge, Split and more. 100% privacy-first, client-side processing. No uploads, no signups." data-i18n-description="meta.description" />
+  <meta name="keywords" content="pdf editor, edit pdf, free pdf editor, pdf editor free, pdf to word, jpg to pdf, word to pdf, editar pdf, online pdf editor, pdf tools, merge pdf, split pdf, convert pdf, client-side pdf, secure pdf" data-i18n-keywords="meta.keywords" />
   <link rel="icon" type="image/svg+xml" href="images/pdftoolkit-favicon.svg" />
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="apple-touch-icon" href="images/favicon.png" />
@@ -700,15 +750,6 @@
   <script type="module" src="src/js/utils/lucide-init.ts"></script>
   <script type="module" src="src/version.ts"></script>
   <script type="module" src="src/js/i18n/index.ts"></script>
-  <script type="module">
-    import { LanguageSwitcher } from './src/js/components/LanguageSwitcher.ts';
-    
-    // Initialize language switchers on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      new LanguageSwitcher('language-switcher-desktop');
-      new LanguageSwitcher('language-switcher-mobile');
-    });
-  </script>
   <script type="module" src="src/js/main.ts"></script>
   <script type="module" src="src/js/mobileMenu.ts"></script>
 </body>

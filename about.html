@@ -8,6 +8,11 @@
   <!-- Early language detection (runs before any rendering) -->
   <script type="module" src="/src/js/utils/early-lang-detection.ts"></script>
   
+  <link rel="alternate" hreflang="x-default" href="https://pdf.voguegale.com/about.html" />
+  <link rel="alternate" hreflang="en" href="https://pdf.voguegale.com/about.html?lang=en" />
+  <link rel="alternate" hreflang="zh-CN" href="https://pdf.voguegale.com/about.html?lang=zh-CN" />
+  <link rel="alternate" hreflang="es" href="https://pdf.voguegale.com/about.html?lang=es" />
+  
   <meta name="description" content="PDFToolkit is a powerful, privacy-first PDF toolkit." />
   <meta name="keywords" content="pdf tools, privacy, merge pdf, split pdf, edit pdf" />
   <title>About PDFToolkit - Fast, Private, and Free PDF Tools</title>
@@ -261,14 +266,6 @@
   <script type="module" src="/src/js/utils/lucide-init.ts"></script>
   <script type="module" src="/src/version.ts"></script>
   <script type="module" src="/src/js/i18n/index.ts"></script>
-  <script type="module">
-    import { LanguageSwitcher } from '/src/js/components/LanguageSwitcher.ts';
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      new LanguageSwitcher('language-switcher-desktop');
-      new LanguageSwitcher('language-switcher-mobile');
-    });
-  </script>
   <script type="module" src="/src/js/mobileMenu.ts"></script>
 </body>
 

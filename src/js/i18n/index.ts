@@ -21,7 +21,14 @@ class I18n {
    * Detect user's preferred language from browser settings or localStorage
    */
   private detectLanguage(): string {
-    // Check localStorage first
+    // 1. Check URL parameter first (for SEO and sharing)
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramLang = urlParams.get('lang');
+    if (paramLang && this.translations[paramLang]) {
+      return paramLang;
+    }
+
+    // 2. Check localStorage
     const savedLang = localStorage.getItem(STORAGE_KEY);
     if (savedLang && this.translations[savedLang]) {
       return savedLang;
@@ -91,6 +98,12 @@ class I18n {
 
     this.currentLanguage = lang;
     localStorage.setItem(STORAGE_KEY, lang);
+    
+    // Update URL with lang parameter without reloading
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    window.history.pushState({}, '', url);
+
     this.updatePageTranslations();
   }
 
@@ -179,6 +192,7 @@ class I18n {
 
     // 4. Update SEO Meta Tags
     this.updateMetaTags();
+    this.updateCanonicalAndOg();
 
     // Dispatch event for dynamic components
     window.dispatchEvent(new CustomEvent('languageChanged', { 
@@ -214,6 +228,49 @@ class I18n {
     if (keywords && keywords !== keywordsKey) {
         updateMeta('keywords', keywords);
     }
+  }
+
+  /**
+   * Update Canonical URL and Open Graph tags based on current language
+   */
+  private updateCanonicalAndOg(): void {
+    const baseUrl = 'https://pdf.voguegale.com/';
+    const currentLang = this.currentLanguage;
+    
+    // Construct new URL
+    // If default language (en), use clean URL, otherwise append query param
+    const newUrl = currentLang === DEFAULT_LANGUAGE 
+        ? baseUrl 
+        : `${baseUrl}?lang=${currentLang}`;
+
+    // 1. Update Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', newUrl);
+
+    // 2. Update OG:URL
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+        ogUrl = document.createElement('meta');
+        ogUrl.setAttribute('property', 'og:url');
+        document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', newUrl);
+
+    // 3. Update OG:Locale
+    // Convert hyphenated codes (zh-CN) to underscore format (zh_CN) for OG
+    const ogLocaleValue = currentLang.replace('-', '_');
+    let ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (!ogLocale) {
+        ogLocale = document.createElement('meta');
+        ogLocale.setAttribute('property', 'og:locale');
+        document.head.appendChild(ogLocale);
+    }
+    ogLocale.setAttribute('content', ogLocaleValue);
   }
 }
 

@@ -5,6 +5,7 @@
 
 import { i18n } from '../i18n/index';
 import { createIcons, icons } from 'lucide';
+import '../../css/language-switcher.css';
 
 export class LanguageSwitcher {
   private container: HTMLElement | null = null;
