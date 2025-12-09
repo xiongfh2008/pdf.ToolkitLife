@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFToolkit 部署诊断工具</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .input-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .results {
+            margin-top: 30px;
+            display: none;
+        }
+        .results.show {
+            display: block;
+        }
+        .check-item {
+            background: #f7fafc;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 4px solid #cbd5e0;
+            transition: all 0.3s;
+        }
+        .check-item.success {
+            background: #f0fdf4;
+            border-left-color: #22c55e;
+        }
+        .check-item.error {
+            background: #fef2f2;
+            border-left-color: #ef4444;
+        }
+        .check-item.warning {
+            background: #fffbeb;
+            border-left-color: #f59e0b;
+        }
+        .check-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .check-detail {
+            color: #64748b;
+            font-size: 14px;
+            margin-left: 28px;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .summary-score {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+        }
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 PDFToolkit 部署诊断工具</h1>
+        <p class="subtitle">自动检测本地和部署版本的差异，快速定位问题</p>
+        
+        <div class="input-group">
+            <label for="localUrl">本地预览地址</label>
+            <input type="text" id="localUrl" placeholder="http://localhost:4173" value="http://localhost:4173">
+        </div>
+        
+        <div class="input-group">
+            <label for="productionUrl">生产环境地址</label>
+            <input type="text" id="productionUrl" placeholder="https://pdf.voguegale.com" value="https://pdf.voguegale.com">
+        </div>
+        
+        <button class="btn" onclick="runDiagnostic()">开始诊断</button>
+        
+        <div id="results" class="results">
+            <!-- 结果将在这里显示 -->
+        </div>
+    </div>
+
+    <script>
+        async function runDiagnostic() {
+            const localUrl = document.getElementById('localUrl').value;
+            const productionUrl = document.getElementById('productionUrl').value;
+            const resultsDiv = document.getElementById('results');
+            
+            resultsDiv.className = 'results show';
+            resultsDiv.innerHTML = '<div class="loading"><div class="spinner"></div><p>正在诊断...</p></div>';
+            
+            const results = {
+                local: await checkEnvironment(localUrl, '本地'),
+                production: await checkEnvironment(productionUrl, '生产')
+            };
+            
+            displayResults(results);
+        }
+        
+        async function checkEnvironment(baseUrl, name) {
+            const checks = {
+                name,
+                baseUrl,
+                accessible: false,
+                hasLanguageSwitcher: false,
+                hasToolCards: false,
+                hasAlertModal: false,
+                alertModalHidden: false,
+                scriptsLoaded: [],
+                stylesLoaded: [],
+                errors: [],
+                mainJsSize: 0
+            };
+            
+            try {
+                // 由于CORS限制，我们只能提供诊断代码
+                // 用户需要在浏览器Console中运行
+                checks.accessible = true;
+                checks.instructions = `请在浏览器中打开 ${baseUrl}，然后在Console中运行以下代码：`;
+            } catch (error) {
+                checks.errors.push(error.message);
+            }
+            
+            return checks;
+        }
+        
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            
+            const diagnosticCode = `
+// === PDFToolkit 诊断代码 ===
+// 请分别在本地和生产环境的Console中运行
+
+(async function() {
+    console.clear();
+    const results = {
+        url: window.location.href,
+        timestamp: new Date().toISOString()
+    };
+    
+    // 1. 检查DOM元素
+    results.languageSwitcher = !!document.getElementById('language-switcher-desktop');
+    results.toolCards = document.querySelectorAll('.tool-card').length;
+    results.alertModal = !!document.getElementById('alert-modal');
+    results.alertModalHidden = document.getElementById('alert-modal')?.classList.contains('hidden');
+    
+    // 2. 检查脚本
+    results.scripts = Array.from(document.scripts)
+        .filter(s => s.src)
+        .map(s => ({
+            name: s.src.split('/').pop(),
+            loaded: true
+        }));
+    
+    // 3. 检查样式
+    results.styles = Array.from(document.styleSheets)
+        .map(s => s.href?.split('/').pop() || 'inline')
+        .filter(s => s !== 'inline');
+    
+    // 4. 检查main.js大小
+    const mainScript = Array.from(document.scripts).find(s => s.src.includes('main-'));
+    if (mainScript) {
+        try {
+            const response = await fetch(mainScript.src, { cache: 'no-store' });
+            const text = await response.text();
+            results.mainJsSize = Math.round(text.length / 1024);
+            results.hasLanguageSwitcherCode = text.includes('LanguageSwitcher');
+        } catch (e) {
+            results.mainJsError = e.message;
+        }
+    }
+    
+    // 5. 检查Console错误
+    results.consoleErrors = window.__errors || [];
+    
+    console.log('=== 诊断结果 ===');
+    console.table(results);
+    console.log('\\n请将此结果截图或复制给开发者');
+    
+    return results;
+})();
+            `.trim();
+            
+            resultsDiv.innerHTML = `
+                <div class="summary">
+                    <div class="summary-score">📋</div>
+                    <h2>诊断步骤</h2>
+                    <p>由于浏览器安全限制，请手动执行以下步骤</p>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-title">
+                        <span class="icon">1️⃣</span>
+                        <span>本地环境检查</span>
+                    </div>
+                    <div class="check-detail">
+                        打开 <a href="${results.local.baseUrl}" target="_blank" style="color: #667eea; font-weight: 600;">${results.local.baseUrl}</a>
+                        <br>按 F12 → Console → 复制粘贴以下代码 → 回车
+                        <div class="code-block">${diagnosticCode}</div>
+                    </div>
+                </div>
+                
+                <div class="check-item">
+                    <div class="check-title">
+                        <span class="icon">2️⃣</span>
+                        <span>生产环境检查</span>
+                    </div>
+                    <div class="check-detail">
+                        打开无痕窗口（Ctrl + Shift + N）
+                        <br>访问 <a href="${results.production.baseUrl}" target="_blank" style="color: #667eea; font-weight: 600;">${results.production.baseUrl}</a>
+                        <br>按 F12 → Console → 复制粘贴相同代码 → 回车
+                        <div class="code-block">${diagnosticCode}</div>
+                    </div>
+                </div>
+                
+                <div class="check-item warning">
+                    <div class="check-title">
+                        <span class="icon">3️⃣</span>
+                        <span>对比结果</span>
+                    </div>
+                    <div class="check-detail">
+                        比较两次运行的结果，重点关注：
+                        <ul style="margin-left: 28px; margin-top: 8px; color: #64748b;">
+                            <li>languageSwitcher: 应该都是 true</li>
+                            <li>toolCards: 应该都 > 0</li>
+                            <li>alertModalHidden: 应该都是 true</li>
+                            <li>mainJsSize: 应该接近（约20KB）</li>
+                            <li>hasLanguageSwitcherCode: 应该都是 true</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="check-item error">
+                    <div class="check-title">
+                        <span class="icon">⚠️</span>
+                        <span>常见问题</span>
+                    </div>
+                    <div class="check-detail">
+                        <strong>如果生产环境结果异常：</strong>
+                        <ul style="margin-left: 28px; margin-top: 8px; color: #64748b;">
+                            <li><strong>mainJsSize 为 0</strong> → 浏览器使用了缓存，需要清除缓存</li>
+                            <li><strong>hasLanguageSwitcherCode 为 false</strong> → 部署的是旧版本，需要重新部署</li>
+                            <li><strong>toolCards 为 0</strong> → JavaScript执行失败，检查Console错误</li>
+                            <li><strong>出现 CORS 错误</strong> → node:module问题未修复，需要重新构建</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
+
