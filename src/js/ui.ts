@@ -44,7 +44,17 @@ export const hideLoader = () => {
     if (dom.loaderModal) dom.loaderModal.classList.add('hidden');
 };
 
+// 添加一个标志来防止页面加载时立即显示弹框
+let pageLoadComplete = false;
+setTimeout(() => { pageLoadComplete = true; }, 3000); // 3秒后才允许显示弹框
+
 export const showAlert = (title: any, message: any, type: string = 'error', callback?: () => void) => {
+    // 如果页面刚加载且没有标题和消息，阻止显示（可能是意外触发）
+    if (!pageLoadComplete && (!title || !message)) {
+        console.warn('Blocked alert during page load:', { title, message });
+        return;
+    }
+    
     if (dom.alertTitle) dom.alertTitle.textContent = title;
     if (dom.alertMessage) dom.alertMessage.textContent = message;
     if (dom.alertModal) dom.alertModal.classList.remove('hidden');

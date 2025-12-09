@@ -311,22 +311,33 @@ const init = () => {
   // Ensure all modals are hidden on initialization (防止意外弹出)
   if (dom.alertModal) {
     dom.alertModal.classList.add('hidden');
+    // 强制隐藏，使用 style 优先级
+    (dom.alertModal as HTMLElement).style.display = 'none';
   }
   if (dom.warningModal) {
     dom.warningModal.classList.add('hidden');
+    (dom.warningModal as HTMLElement).style.display = 'none';
   }
 
-  // 额外保护：延迟检查确保没有弹框被意外触发
-  setTimeout(() => {
-    if (dom.alertModal && !dom.alertModal.classList.contains('hidden')) {
+  // 额外保护：多次检查确保没有弹框被意外触发
+  const hideModalsCheck = () => {
+    if (dom.alertModal && (!dom.alertModal.classList.contains('hidden') || (dom.alertModal as HTMLElement).style.display !== 'none')) {
       dom.alertModal.classList.add('hidden');
-      console.log('Alert modal was unexpectedly visible, forcefully hidden.');
+      (dom.alertModal as HTMLElement).style.display = 'none';
+      console.warn('⚠️ Alert modal was unexpectedly visible, forcefully hidden.', new Error().stack);
     }
-    if (dom.warningModal && !dom.warningModal.classList.contains('hidden')) {
+    if (dom.warningModal && (!dom.warningModal.classList.contains('hidden') || (dom.warningModal as HTMLElement).style.display !== 'none')) {
       dom.warningModal.classList.add('hidden');
-      console.log('Warning modal was unexpectedly visible, forcefully hidden.');
+      (dom.warningModal as HTMLElement).style.display = 'none';
+      console.warn('⚠️ Warning modal was unexpectedly visible, forcefully hidden.');
     }
-  }, 100);
+  };
+  
+  // 在不同时间点检查
+  setTimeout(hideModalsCheck, 50);
+  setTimeout(hideModalsCheck, 100);
+  setTimeout(hideModalsCheck, 500);
+  setTimeout(hideModalsCheck, 1000);
 
   // Full-width toggle functionality
   const fullWidthToggle = document.getElementById('full-width-toggle') as HTMLInputElement;
