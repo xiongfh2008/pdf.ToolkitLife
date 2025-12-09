@@ -316,6 +316,18 @@ const init = () => {
     dom.warningModal.classList.add('hidden');
   }
 
+  // 额外保护：延迟检查确保没有弹框被意外触发
+  setTimeout(() => {
+    if (dom.alertModal && !dom.alertModal.classList.contains('hidden')) {
+      dom.alertModal.classList.add('hidden');
+      console.log('Alert modal was unexpectedly visible, forcefully hidden.');
+    }
+    if (dom.warningModal && !dom.warningModal.classList.contains('hidden')) {
+      dom.warningModal.classList.add('hidden');
+      console.log('Warning modal was unexpectedly visible, forcefully hidden.');
+    }
+  }, 100);
+
   // Full-width toggle functionality
   const fullWidthToggle = document.getElementById('full-width-toggle') as HTMLInputElement;
   const toolInterface = document.getElementById('tool-interface');
