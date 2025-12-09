@@ -1,0 +1,8 @@
+请在命令行中执行以下命令：
+
+git add .
+git commit -m "Fix: Alert protection, language switcher, cache optimization"
+git push
+
+然后等待5分钟，让Netlify完成部署。
+

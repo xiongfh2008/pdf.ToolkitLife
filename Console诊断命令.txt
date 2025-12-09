@@ -1,0 +1,14 @@
+// 请复制以下命令，粘贴到 Console（按F12打开）中并按回车，然后截图结果
+
+// === 诊断命令 ===
+
+console.clear();
+console.log('=== PDFToolkit 诊断信息 ===');
+console.log('1. 语言切换器容器:', document.getElementById('language-switcher-desktop'));
+console.log('2. 语言切换器内容:', document.getElementById('language-switcher-desktop')?.innerHTML);
+console.log('3. 工具网格:', document.getElementById('grid-view'));
+console.log('4. 工具卡片数量:', document.querySelectorAll('.tool-card').length);
+console.log('5. Alert Modal hidden?:', document.getElementById('alert-modal')?.classList.contains('hidden'));
+console.log('6. LanguageSwitcher CSS加载:', !!Array.from(document.styleSheets).find(s => s.href?.includes('LanguageSwitcher')));
+console.log('=== 结束 ===');
+

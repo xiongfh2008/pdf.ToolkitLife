@@ -305,8 +305,15 @@ const init = () => {
   console.log('Welcome to PDFToolkit - Your Privacy First PDF Solution!');
 
   // Initialize Language Switchers
-  new LanguageSwitcher('language-switcher-desktop');
-  new LanguageSwitcher('language-switcher-mobile');
+  try {
+    console.log('Initializing Language Switchers...');
+    new LanguageSwitcher('language-switcher-desktop');
+    console.log('✅ Desktop language switcher initialized');
+    new LanguageSwitcher('language-switcher-mobile');
+    console.log('✅ Mobile language switcher initialized');
+  } catch (error) {
+    console.error('❌ Language Switcher initialization failed:', error);
+  }
 
   // Ensure all modals are hidden on initialization (防止意外弹出)
   if (dom.alertModal) {

@@ -12,8 +12,10 @@ export class LanguageSwitcher {
   private isOpen: boolean = false;
 
   constructor(containerId: string) {
+    console.log(`LanguageSwitcher: Looking for container #${containerId}`);
     this.container = document.getElementById(containerId);
     if (this.container) {
+      console.log(`LanguageSwitcher: Container found, rendering...`);
       this.render();
       this.attachEventListeners();
       
@@ -32,6 +34,9 @@ export class LanguageSwitcher {
           this.closeDropdown();
         }
       });
+      console.log(`LanguageSwitcher: #${containerId} fully initialized`);
+    } else {
+      console.warn(`LanguageSwitcher: Container #${containerId} not found in DOM`);
     }
   }
 
