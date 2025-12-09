@@ -79,10 +79,8 @@ export default defineConfig(({ mode }) => ({
           'compression': ['jszip', 'archiver'],
         },
       },
-      external: [
-        // 标记这些模块为外部模块，避免浏览器兼容性警告
-        /^node:*/,
-      ],
+      // 移除 external 配置，因为浏览器构建不应该有外部模块
+      // Node.js 模块应该通过 nodePolyfills 插件处理
     },
   },
   test: {
